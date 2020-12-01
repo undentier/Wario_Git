@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2cda822bfa80074f881e6fe0192b4c9, type: 3}
-  m_Name: 123Requin1IDCard
+  m_Name: ID_123Requin
   m_EditorClassIdentifier: 
   cluster: 0
-  trio: Brigantin
-  aptiqueChal: 0
+  trio: LeRafiot
+  haptiqueChal: 0
   inputChal: 0
+  indexEnum: 3
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: a390dcaae7f88024697b093263341d5d, type: 3}
     required: 1
