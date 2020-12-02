@@ -77,8 +77,8 @@ public class SharkSysteme : MonoBehaviour
     // Coroutine qui fait spawn le shark de manière aléatoire
     IEnumerator SharkSpawnRandom()
     {
-        float cooldown = Random.Range(1, 3);
-        yield return new WaitForSeconds(cooldown);
+        //float cooldown = Random.Range(1, 3);
+        //yield return new WaitForSeconds(cooldown);
 
         stopSign.SetActive(true);
         yield return new WaitForSeconds(timeForSpawn);
