@@ -22,21 +22,20 @@ namespace LeRafiot
             [Header("Object attached")]
             public GameObject attachedTo;
 
-            [Header("Rope Settings")]
-            public int ropeSize = 10;
-            public int pullingUpRopeSize = 1;
+            //Rope settings
+            [HideInInspector] public int ropeSize;
+            [HideInInspector] public int pullingUpRopeSize;
 
-            [Header("Level 3 Parameters")]
-            public bool level3;
-            public int pullingDownRopeSize = 1;
-            public float delayToPullDown = 1;
+            //Level 3 parameters
+            [HideInInspector] public bool level3;
+            [HideInInspector] public int pullingDownRopeSize = 1;
+            [HideInInspector] public float delayToPullDown = 1;
 
             #endregion
 
             private void Start()
             {
                 rope = GetComponent<LineRenderer>();
-                attachedTo.transform.localPosition = new Vector3(0, ropeSize);                          //Set the position of the chest and therefore the rope height 
             }
 
             private void Update()
@@ -51,7 +50,7 @@ namespace LeRafiot
                     }
                     else
                     {
-                        if (level3)
+                        if (level3 && !Manager.Instance.panel.activeSelf)
                         {
                             timer += Time.deltaTime;
 

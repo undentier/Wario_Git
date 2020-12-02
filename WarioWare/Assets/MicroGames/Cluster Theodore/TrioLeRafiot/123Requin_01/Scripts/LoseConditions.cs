@@ -20,7 +20,6 @@ namespace LeRafiot
             private float spawnCooldown;
 
             [Header("UI")]
-            //win panel
             public GameObject panel;
             public TextMeshProUGUI resultText;
             public TextMeshProUGUI bpmText;
