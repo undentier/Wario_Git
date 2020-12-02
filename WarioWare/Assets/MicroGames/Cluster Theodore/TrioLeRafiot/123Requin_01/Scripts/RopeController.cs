@@ -11,12 +11,11 @@ namespace LeRafiot
         /// Antoine LEROUX
         /// This script is use to pull up by x height the rope of y height
         /// </summary>
-  
-        public class RopeController : MonoBehaviour
+
+        public class RopeController : TimedBehaviour
         {
             #region Variables
             private LineRenderer rope;
-            private float timer = 0;
             private bool win;
 
             [Header("Object attached")]
@@ -29,13 +28,21 @@ namespace LeRafiot
             //Level 3 parameters
             [HideInInspector] public bool level3;
             [HideInInspector] public int pullingDownRopeSize = 1;
-            [HideInInspector] public float delayToPullDown = 1;
 
             #endregion
 
-            private void Start()
+            public override void Start()
             {
+                base.Start(); //Do not erase this line!
                 rope = GetComponent<LineRenderer>();
+
+            }
+
+            //FixedUpdate is called on a fixed time.
+            public override void FixedUpdate()
+            {
+                base.FixedUpdate(); //Do not erase this line!
+
             }
 
             private void Update()
@@ -44,22 +51,9 @@ namespace LeRafiot
 
                 if (rope.GetPosition(1).y > 0)
                 {
-                    if (Input.GetButtonDown("A_Button") && !Manager.Instance.panel.activeSelf)
+                    if ((Input.GetButtonDown("A_Button") || Input.GetKeyDown(KeyCode.Space)) && !Manager.Instance.panel.activeSelf)
                     {
                         attachedTo.transform.position -= new Vector3(0, -pullingUpRopeSize);            //Pulling up the chest
-                    }
-                    else
-                    {
-                        if (level3 && !Manager.Instance.panel.activeSelf)
-                        {
-                            timer += Time.deltaTime;
-
-                            if (timer > delayToPullDown)
-                            {
-                                timer = 0;
-                                attachedTo.transform.position -= new Vector3(0, pullingDownRopeSize);   //Automatically pulling down the chest
-                            }
-                        }
                     }
                 }
                 else
@@ -69,6 +63,18 @@ namespace LeRafiot
                         win = true;
                         rope.SetPosition(1, new Vector3(0, 0));
                         Manager.Instance.Result(true);
+                    }
+                }
+            }
+
+            //TimedUpdate is called once every tick.
+            public override void TimedUpdate()
+            {
+                if (rope.GetPosition(1).y > 0)
+                {
+                    if (level3 && !Manager.Instance.panel.activeSelf)
+                    {
+                        attachedTo.transform.position -= new Vector3(0, pullingDownRopeSize);   //Automatically pulling down the chest in rythm with tick
                     }
                 }
             }

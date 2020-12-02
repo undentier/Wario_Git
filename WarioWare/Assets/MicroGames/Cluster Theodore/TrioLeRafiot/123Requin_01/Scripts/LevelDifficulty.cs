@@ -31,7 +31,6 @@ namespace LeRafiot
             [Range(1, 50)] public int ropeSize3 = 16;
             [Range(1, 10)] public int pullingUpRopeSize3 = 1;
             [Range(1, 10)] public int pullingDownRopeSize3 = 1;
-            public float delayToPullDown = 1;
 
             #endregion
 
@@ -77,7 +76,6 @@ namespace LeRafiot
                     ropeScript.ropeSize = ropeSize3;
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize3;
                     ropeScript.pullingDownRopeSize = pullingDownRopeSize3;
-                    ropeScript.delayToPullDown = delayToPullDown;
                     ropeScript.attachedTo.transform.localPosition = new Vector3(0, ropeScript.ropeSize);
                 }
             }

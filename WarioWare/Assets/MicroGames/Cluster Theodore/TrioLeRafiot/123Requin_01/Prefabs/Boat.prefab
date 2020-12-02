@@ -173,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7004696036678869317}
   - component: {fileID: 7004696036678869314}
-  - component: {fileID: 7004696036678869316}
+  - component: {fileID: 2605243809034401487}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -293,7 +293,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!114 &7004696036678869316
+--- !u!114 &2605243809034401487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,12 +302,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7004696036678869315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ccf17c14b29b94eb395db6ccd8732d, type: 3}
+  m_Script: {fileID: 11500000, guid: cd385496877b10f419393b798d445c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bpm: 60
+  currentDifficulty: 0
+  timer: 0
+  currentTime: 0
   attachedTo: {fileID: 7004696036123926409}
-  ropeSize: 8
-  pullingUpRopeSize: 1
+  ropeSize: 0
+  pullingUpRopeSize: 0
   level3: 0
   pullingDownRopeSize: 1
   delayToPullDown: 1
