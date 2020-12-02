@@ -19,5 +19,5 @@ MonoBehaviour:
   indexEnum: 3
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: a390dcaae7f88024697b093263341d5d, type: 3}
-    required: 1
-    buildIndex: -1
+    required: 0
+    buildIndex: 2
