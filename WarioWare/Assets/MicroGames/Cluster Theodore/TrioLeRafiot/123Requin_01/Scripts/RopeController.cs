@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Testing;
 
 namespace LeRafiot
 {
@@ -8,7 +9,7 @@ namespace LeRafiot
     {
         /// <summary>
         /// Antoine LEROUX
-        /// This script ise use to pull up by x height the rope of y height
+        /// This script is use to pull up by x height the rope of y height
         /// </summary>
   
         public class RopeController : MonoBehaviour
@@ -44,13 +45,12 @@ namespace LeRafiot
 
                 if (rope.GetPosition(1).y > 0)
                 {
-                    if (Input.GetButtonDown("A_Button") && GameManager.Instance.gameState == GameManager.GameState.Running)
+                    if (Input.GetButtonDown("A_Button") && !Manager.Instance.panel.activeSelf)
                     {
                         attachedTo.transform.position -= new Vector3(0, -pullingUpRopeSize);            //Pulling up the chest
                     }
                     else
                     {
-
                         if (level3)
                         {
                             timer += Time.deltaTime;
@@ -69,7 +69,7 @@ namespace LeRafiot
                     {
                         win = true;
                         rope.SetPosition(1, new Vector3(0, 0));
-                        GameManager.Instance.gameState = GameManager.GameState.Win;
+                        Manager.Instance.Result(true);
                     }
                 }
             }

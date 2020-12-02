@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde5c291e73811d4e9f119f618206f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idCard: {fileID: 11400000, guid: ab130a2778ec91940af740163402a016, type: 2}
+  idCard: {fileID: 11400000, guid: 36f021f553ad88443928fde88b1d1f83, type: 2}
   bpm: 140
   currentDifficulty: 0
   panel: {fileID: 137554992}
