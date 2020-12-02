@@ -26,6 +26,8 @@ namespace LeRafiot
             public Slider timerUI;
             public TextMeshProUGUI tickNumber;
             public Image input;
+            public Animator buttonAnimator;
+
 
             #endregion
 
@@ -57,6 +59,8 @@ namespace LeRafiot
                 }
 
                 tickNumber.text = Tick.ToString();
+
+                buttonAnimator.SetTrigger("Press");
             }
         }
     }

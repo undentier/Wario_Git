@@ -35,7 +35,6 @@ namespace LeRafiot
             {
                 base.Start(); //Do not erase this line!
                 rope = GetComponent<LineRenderer>();
-
             }
 
             //FixedUpdate is called on a fixed time.
