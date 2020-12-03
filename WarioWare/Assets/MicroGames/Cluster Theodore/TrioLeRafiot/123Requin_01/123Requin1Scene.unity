@@ -2595,17 +2595,17 @@ MonoBehaviour:
   pullingUpRopeSize1: 1
   tickBeforeSpawn1: 3
   tickSharkStay1: 2
-  startTick1: 5
+  startTick1: 2
   ropeSize2: 14
   pullingUpRopeSize2: 1
-  tickBeforeSpawn2: 3
+  tickBeforeSpawn2: 2
   tickSharkStay2: 2
-  startTick2: 3
+  startTick2: 2
   ropeSize3: 16
   pullingUpRopeSize3: 1
   pullingDownRopeSize3: 1
-  tickBeforeSpawn3: 1
-  tickSharkStay3: 1
+  tickBeforeSpawn3: 2
+  tickSharkStay3: 2
   startTick3: 1
 --- !u!1 &2057203939
 GameObject:
