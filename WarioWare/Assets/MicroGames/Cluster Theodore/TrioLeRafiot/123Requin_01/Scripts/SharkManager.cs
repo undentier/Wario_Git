@@ -14,13 +14,7 @@ namespace LeRafiot
             [Header("Values Script")]
             public int tickBeforeSpawn;
             public int tickSharkStay;
-
-            [HideInInspector]
-            public int startTick = 6;
-
-            [Header("Intervalle start shark spawn")]
-            public int min;
-            public int max;
+            public int startTick;
 
             [Header ("True si requin présent")]
             public bool sharkIsHere;
@@ -46,11 +40,10 @@ namespace LeRafiot
                 ManagerInit();
 
                 canFlash = false;
+                sign.gameObject.SetActive(false);
                 
                 counterTick = 0;
                 counterTickShark = 0;
-
-                //startTick = Random.Range(min,max);
             }
 
             //FixedUpdate is called on a fixed time.

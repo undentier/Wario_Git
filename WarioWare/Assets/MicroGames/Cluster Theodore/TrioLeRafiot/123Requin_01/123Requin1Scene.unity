@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2593,23 +2593,20 @@ MonoBehaviour:
   rope: {fileID: 1295587206}
   ropeSize1: 8
   pullingUpRopeSize1: 1
-  tickBeforeSpawn1: 2
+  tickBeforeSpawn1: 3
   tickSharkStay1: 2
-  min1: 2
-  max1: 4
+  startTick1: 5
   ropeSize2: 14
   pullingUpRopeSize2: 1
-  tickBeforeSpawn2: 2
+  tickBeforeSpawn2: 3
   tickSharkStay2: 2
-  min2: 1
-  max2: 2
+  startTick2: 3
   ropeSize3: 16
   pullingUpRopeSize3: 1
   pullingDownRopeSize3: 1
   tickBeforeSpawn3: 1
   tickSharkStay3: 1
-  min3: 1
-  max3: 1
+  startTick3: 1
 --- !u!1 &2057203939
 GameObject:
   m_ObjectHideFlags: 0
