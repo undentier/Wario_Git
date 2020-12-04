@@ -19,9 +19,10 @@ namespace LeRafiot
             [Header ("True si requin présent")]
             public bool sharkIsHere;
 
-            [Header ("Oject à renseigner")]
+            [Header ("Object à renseigner")]
             public GameObject sharkPrefab;
-            public Transform spawnPoint;
+            public Transform spawnStart;
+            public Transform spawnEnd;
 
             [Header ("UI")]
             public Image sign;
@@ -88,7 +89,8 @@ namespace LeRafiot
                             sign.gameObject.SetActive(true);
                             lockSpawn = true;
                             sharkIsHere = true;
-                            actualShark = Instantiate(sharkPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                            actualShark = Instantiate(sharkPrefab, spawnStart.transform.position, spawnStart.transform.rotation);
+                            StartCoroutine(MoveToPosition(actualShark.transform, spawnEnd.transform.position, (tickSharkStay * (60 / bpm))));
                         }
                     }
                     else
@@ -109,6 +111,18 @@ namespace LeRafiot
                 else
                 {
                     Destroy(gameObject);
+                }
+            }
+
+            public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
+            {
+                Vector3 currentPos = transform.position;
+                float t = 0;
+                while (t < 1)
+                {
+                    t += Time.deltaTime / timeToMove;
+                    transform.position = Vector3.Lerp(currentPos, position, t);
+                    yield return null;
                 }
             }
             

@@ -51,7 +51,7 @@ namespace LeRafiot
                     input.gameObject.SetActive(false);
                 }
 
-                if (Tick == 8)
+                if (Tick == 8)                                                                          //Lose if at the end of the game, the player don't pull the chest to the boat 
                 {
                     Manager.Instance.Result(false);
                 }
@@ -59,6 +59,17 @@ namespace LeRafiot
                 tickNumber.text = Tick.ToString();
 
                 buttonAnimator.SetTrigger("Press");
+            }
+
+            private void Update()
+            {
+                if (Manager.Instance.resultText != false)                                               //Lose if the player pulling up the chest when a shark is here
+                {
+                    if (SharkManager.Instance.sharkIsHere && (Input.GetButtonDown("A_Button") || Input.GetKeyDown(KeyCode.Space)))              
+                    {
+                        Manager.Instance.Result(false);
+                    }
+                }
             }
         }
     }
