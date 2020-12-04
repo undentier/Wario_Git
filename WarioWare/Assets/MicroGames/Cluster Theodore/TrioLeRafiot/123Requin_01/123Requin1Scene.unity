@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -624,10 +624,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1692023403}
     m_Modifications:
-    - target: {fileID: 1326923223, guid: 5baa88515599db04c81d0ee95a46b34b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.97
-      objectReference: {fileID: 0}
     - target: {fileID: 4334812306430207243, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
       propertyPath: m_Name
@@ -638,26 +634,6 @@ PrefabInstance:
       propertyPath: sign
       value: 
       objectReference: {fileID: 1506365011}
-    - target: {fileID: 5447814935373372233, guid: 5baa88515599db04c81d0ee95a46b34b,
-        type: 3}
-      propertyPath: tickBeforeSpawn
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447814935373372233, guid: 5baa88515599db04c81d0ee95a46b34b,
-        type: 3}
-      propertyPath: min
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447814935373372233, guid: 5baa88515599db04c81d0ee95a46b34b,
-        type: 3}
-      propertyPath: max
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447814935397048986, guid: 5baa88515599db04c81d0ee95a46b34b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1626,11 +1602,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7004696036656574221, guid: 7f2f3f968f5dc2149a0aace6f38364b3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2f3f968f5dc2149a0aace6f38364b3, type: 3}
