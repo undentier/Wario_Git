@@ -19,7 +19,7 @@ namespace LeRafiot
             [Header ("True si requin présent")]
             public bool sharkIsHere;
 
-            [Header ("Oject à renseigner")]
+            [Header ("Object à renseigner")]
             public GameObject sharkPrefab;
             public Transform spawnPoint;
 

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -595,7 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418571525}
   m_Layer: 0
-  m_Name: UI
+  m_Name: --UI--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -622,8 +622,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1692023403}
     m_Modifications:
+    - target: {fileID: 1326923223, guid: 5baa88515599db04c81d0ee95a46b34b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.97
+      objectReference: {fileID: 0}
     - target: {fileID: 4334812306430207243, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
       propertyPath: m_Name
@@ -672,17 +676,17 @@ PrefabInstance:
     - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
@@ -692,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
         type: 3}
@@ -711,6 +715,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5baa88515599db04c81d0ee95a46b34b, type: 3}
+--- !u!4 &495847046 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
+    type: 3}
+  m_PrefabInstance: {fileID: 495847045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &573210160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1233242452}
   m_Layer: 0
-  m_Name: Graphs
+  m_Name: --GRAPHS--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1254,7 +1264,7 @@ GameObject:
   - component: {fileID: 1247814706}
   - component: {fileID: 1247814705}
   m_Layer: 0
-  m_Name: Sounds
+  m_Name: --SOUNDS--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1616,6 +1626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004696036656574221, guid: 7f2f3f968f5dc2149a0aace6f38364b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2f3f968f5dc2149a0aace6f38364b3, type: 3}
@@ -2063,7 +2078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692023403}
   m_Layer: 0
-  m_Name: Gameplay
+  m_Name: --GAMEPLAY--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2082,6 +2097,7 @@ Transform:
   m_Children:
   - {fileID: 2032845872}
   - {fileID: 960952932}
+  - {fileID: 495847046}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
