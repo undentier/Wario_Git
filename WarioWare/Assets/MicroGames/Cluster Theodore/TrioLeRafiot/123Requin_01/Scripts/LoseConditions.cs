@@ -27,8 +27,6 @@ namespace LeRafiot
             public TextMeshProUGUI tickNumber;
             public Image input;
             public Animator buttonAnimator;
-
-
             #endregion
 
             public override void Start()
