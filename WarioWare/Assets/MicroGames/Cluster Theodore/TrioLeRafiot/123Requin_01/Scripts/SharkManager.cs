@@ -53,12 +53,8 @@ namespace LeRafiot
             //FixedUpdate is called on a fixed time.
             public override void FixedUpdate()
             {
-                base.FixedUpdate(); //Do not erase this line!
-
-                
+                base.FixedUpdate(); //Do not erase this line!               
             }
-
-
 
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
@@ -128,7 +124,6 @@ namespace LeRafiot
                     Destroy(gameObject);
                 }
             }
-
 
             public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
             {

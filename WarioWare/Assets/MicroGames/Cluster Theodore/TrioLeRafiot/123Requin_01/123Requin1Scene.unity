@@ -3301,15 +3301,14 @@ MonoBehaviour:
   timer: 0
   currentTime: 0
   rope: {fileID: 1295587206}
-  ropeSize1: 12
+  ropeSize1: 18
   pullingUpRopeSize1: 1
-  ropeSize2: 14
+  ropeSize2: 12
   pullingUpRopeSize2: 1
   pullingDownRopeSize2: 1
-  ropeSize3: 16
+  ropeSize3: 12
   pullingUpRopeSize3: 1
-  sharkSysteme1: 1
-  tickBeforeSpawn3: 4
+  tickBeforeSpawn3: 3
   tickSharkStay3: 2
   startTick3: 1
 --- !u!1 &2057203939
