@@ -2982,19 +2982,19 @@ MonoBehaviour:
   timer: 0
   currentTime: 0
   rope: {fileID: 1295587206}
-  ropeSize1: 8
+  ropeSize1: 12
   pullingUpRopeSize1: 1
   tickBeforeSpawn1: 3
   tickSharkStay1: 2
   startTick1: 2
   ropeSize2: 14
   pullingUpRopeSize2: 1
+  pullingDownRopeSize2: 1
   tickBeforeSpawn2: 2
   tickSharkStay2: 2
   startTick2: 2
   ropeSize3: 16
   pullingUpRopeSize3: 1
-  pullingDownRopeSize3: 1
   tickBeforeSpawn3: 2
   tickSharkStay3: 2
   startTick3: 1

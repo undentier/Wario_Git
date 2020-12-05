@@ -33,6 +33,7 @@ namespace LeRafiot
             [Header("Level MEDIUM")]
             [Range(1, 50)] public int ropeSize2 = 14;
             [Range(1, 10)] public int pullingUpRopeSize2 = 1;
+            [Range(1, 10)] public int pullingDownRopeSize2 = 1;
 
             public int tickBeforeSpawn2;
             public int tickSharkStay2;
@@ -43,7 +44,6 @@ namespace LeRafiot
             [Header("Level HARD")]
             [Range(1, 50)] public int ropeSize3 = 16;
             [Range(1, 10)] public int pullingUpRopeSize3 = 1;
-            [Range(1, 10)] public int pullingDownRopeSize3 = 1;
 
             public int tickBeforeSpawn3;
             public int tickSharkStay3;
@@ -58,7 +58,6 @@ namespace LeRafiot
                 base.Start();
                 ropeScript = rope.GetComponent<RopeController>();
                 
-
                 SetValues();
             }
 
@@ -90,8 +89,11 @@ namespace LeRafiot
                 }
                 else if (Manager.Instance.currentDifficulty == Manager.Difficulty.MEDIUM)
                 {
+                    ropeScript.level3 = true;
+
                     ropeScript.ropeSize = ropeSize2;
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize2;
+                    ropeScript.pullingDownRopeSize = pullingDownRopeSize2;
                     ropeScript.attachedTo.transform.localPosition = new Vector3(0, ropeScript.ropeSize);
 
                     SharkManager.Instance.tickBeforeSpawn = tickBeforeSpawn2;
@@ -101,13 +103,9 @@ namespace LeRafiot
                 }
                 else if (Manager.Instance.currentDifficulty == Manager.Difficulty.HARD)
                 {
-                    ropeScript.level3 = true;
-
                     ropeScript.ropeSize = ropeSize3;
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize3;
-                    ropeScript.pullingDownRopeSize = pullingDownRopeSize3;
                     ropeScript.attachedTo.transform.localPosition = new Vector3(0, ropeScript.ropeSize);
-
 
                     SharkManager.Instance.tickBeforeSpawn = tickBeforeSpawn3;
                     SharkManager.Instance.tickSharkStay = tickSharkStay3;

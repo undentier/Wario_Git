@@ -57,7 +57,7 @@ namespace LeRafiot
                 }
                 else
                 {
-                    if (!win)
+                    if (!win && !SharkManager.Instance.sharkIsHere && !Manager.Instance.panel.activeSelf)
                     {
                         win = true;
                         rope.SetPosition(1, new Vector3(0, 0));
