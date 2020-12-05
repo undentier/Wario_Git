@@ -53,9 +53,10 @@ namespace LeRafiot
                     input.gameObject.SetActive(false);
                 }
 
-                if (Tick == 8 && Manager.Instance.resultText.text != "You Won!")                                    //Lose if at the end of the game, the player don't pull the chest to the boat 
+                if (Tick == 8 && !Manager.Instance.panel.activeSelf)                //Lose if at the end of the game, the player don't pull the chest to the boat 
                 {
                     Manager.Instance.Result(false);
+                    SoundManager123Requin.Instance.sfxSound[1].Play();
                     buttonAnimator.gameObject.SetActive(false);
                 }
 
@@ -69,7 +70,7 @@ namespace LeRafiot
 
             private void Update()
             {              
-                if (Manager.Instance.resultText != false && Manager.Instance.resultText.text != "You Won!")          //Lose if the player pulling up the chest when a shark is here
+                if (!Manager.Instance.panel.activeSelf)                             //Lose if the player pulling up the chest when a shark is here
                 {
                     if (SharkManager.Instance.sharkIsHere)              
                     {
@@ -78,6 +79,8 @@ namespace LeRafiot
                         if (Input.GetButtonDown("A_Button") || Input.GetKeyDown(KeyCode.Space))
                         {
                             Manager.Instance.Result(false);
+                            SoundManager123Requin.Instance.sfxSound[1].Play();
+                            buttonAnimator.gameObject.SetActive(false);
                         }
                     }
                     else
