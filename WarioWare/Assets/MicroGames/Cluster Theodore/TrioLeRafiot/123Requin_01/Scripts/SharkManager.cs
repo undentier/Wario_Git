@@ -11,6 +11,9 @@ namespace LeRafiot
         {
             public static SharkManager Instance;
 
+            [Header ("Active le systeme de spawn du requin")]
+            public bool sharkSysteme;
+
             [Header("Values Script")]
             public int tickBeforeSpawn;
             public int tickSharkStay;
@@ -29,7 +32,7 @@ namespace LeRafiot
 
             private GameObject actualShark;
 
-            private int counterTick;
+            private float counterTick;
             private int counterTickShark;
             private bool canFlash;
 
@@ -51,55 +54,67 @@ namespace LeRafiot
             public override void FixedUpdate()
             {
                 base.FixedUpdate(); //Do not erase this line!
-         
+
+                
             }
+
+
 
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
-                if (Tick == startTick)
-                {
-                    canFlash = true;
-                }
+                SharkSpawn();
+            }
 
-                if (Tick >= startTick && counterTick != tickBeforeSpawn)
+            void SharkSpawn()
+            {
+                if (sharkSysteme == true)
                 {
-                    counterTick++;
-
-                    if (canFlash)
+                    if (Tick == startTick)
                     {
-                        sign.gameObject.SetActive(true);
-                        canFlash = false;
-                    }
-                    else
-                    {
-                        sign.gameObject.SetActive(false);
                         canFlash = true;
                     }
-                }
 
-                if (counterTick == tickBeforeSpawn)
-                {                  
-                    if (counterTickShark < tickSharkStay)
+                    if (Tick >= startTick && counterTick != tickBeforeSpawn)
                     {
-                        counterTickShark++;
+                        counterTick++;
 
-                        if (lockSpawn == false)
+                        if (canFlash)
                         {
                             sign.gameObject.SetActive(true);
-                            lockSpawn = true;
-                            sharkIsHere = true;
-                            actualShark = Instantiate(sharkPrefab, spawnStart.transform.position, spawnStart.transform.rotation);
-                            StartCoroutine(MoveToPosition(actualShark.transform, spawnEnd.transform.position, (tickSharkStay * (60 / bpm))));
+                            canFlash = false;
+                        }
+                        else
+                        {
+                            sign.gameObject.SetActive(false);
+                            canFlash = true;
                         }
                     }
-                    else
-                    {
-                        sign.gameObject.SetActive(false);
-                        sharkIsHere = false;
-                        Destroy(actualShark);
+
+                    if (counterTick == tickBeforeSpawn)
+                    {                  
+                        if (counterTickShark < tickSharkStay)
+                        {
+                            counterTickShark++;
+
+                            if (lockSpawn == false)
+                            {
+                                sign.gameObject.SetActive(true);
+                                lockSpawn = true;
+                                sharkIsHere = true;
+                                actualShark = Instantiate(sharkPrefab, spawnStart.transform.position, spawnStart.transform.rotation);
+                                StartCoroutine(MoveToPosition(actualShark.transform, spawnEnd.transform.position, (tickSharkStay * (60 / bpm))));
+                            }
+                        }
+                        else
+                        {
+                            sign.gameObject.SetActive(false);
+                            sharkIsHere = false;
+                            Destroy(actualShark);
+                        }
                     }
                 }
+
             }
 
             void ManagerInit()
@@ -113,6 +128,7 @@ namespace LeRafiot
                     Destroy(gameObject);
                 }
             }
+
 
             public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
             {
