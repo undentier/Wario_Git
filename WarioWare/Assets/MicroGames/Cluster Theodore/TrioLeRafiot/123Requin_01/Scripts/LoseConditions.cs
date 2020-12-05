@@ -34,6 +34,8 @@ namespace LeRafiot
                 base.Start(); 
                 bpmText.text = "bpm: " + bpm.ToString();
                 spawnCooldown = 60 / bpm;
+
+                buttonAnimator.gameObject.SetActive(true);
             }
 
             //FixedUpdate is called on a fixed time.
@@ -51,23 +53,36 @@ namespace LeRafiot
                     input.gameObject.SetActive(false);
                 }
 
-                if (Tick == 8)                                                                          //Lose if at the end of the game, the player don't pull the chest to the boat 
+                if (Tick == 8 && Manager.Instance.resultText.text != "You Won!")                                    //Lose if at the end of the game, the player don't pull the chest to the boat 
                 {
                     Manager.Instance.Result(false);
+                    buttonAnimator.gameObject.SetActive(false);
                 }
 
                 tickNumber.text = Tick.ToString();
 
-                buttonAnimator.SetTrigger("Press");
+                if (Tick < 8 && !SharkManager.Instance.sharkIsHere)
+                {
+                    buttonAnimator.SetTrigger("Press");
+                }
             }
 
             private void Update()
-            {
-                if (Manager.Instance.resultText != false)                                               //Lose if the player pulling up the chest when a shark is here
+            {              
+                if (Manager.Instance.resultText != false && Manager.Instance.resultText.text != "You Won!")          //Lose if the player pulling up the chest when a shark is here
                 {
-                    if (SharkManager.Instance.sharkIsHere && (Input.GetButtonDown("A_Button") || Input.GetKeyDown(KeyCode.Space)))              
+                    if (SharkManager.Instance.sharkIsHere)              
                     {
-                        Manager.Instance.Result(false);
+                        buttonAnimator.SetBool("DontPress", true);
+
+                        if (Input.GetButtonDown("A_Button") || Input.GetKeyDown(KeyCode.Space))
+                        {
+                            Manager.Instance.Result(false);
+                        }
+                    }
+                    else
+                    {
+                        buttonAnimator.SetBool("DontPress", false);
                     }
                 }
             }

@@ -771,16 +771,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.333333
-      objectReference: {fileID: 0}
-    - target: {fileID: 7590581595147533443, guid: 5baa88515599db04c81d0ee95a46b34b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.333333
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5baa88515599db04c81d0ee95a46b34b, type: 3}
 --- !u!1 &541429192
@@ -1367,8 +1357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -397.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 350.7, y: -420.1}
+  m_SizeDelta: {x: 119.722305, y: 119.722305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1169488384
 Animator:
@@ -1408,7 +1398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c8dbeca34647274a9877a0bb3dce400, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8734c26eb6a4bbf43983f5fd83b5f37f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1700,7 +1690,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453113981}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1453113984
 Camera:
   m_ObjectHideFlags: 0
