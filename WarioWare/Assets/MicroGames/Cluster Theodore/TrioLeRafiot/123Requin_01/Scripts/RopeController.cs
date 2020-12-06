@@ -16,6 +16,7 @@ namespace LeRafiot
         {
             #region Variables
             private LineRenderer rope;
+            private LoseConditions loseScript;
             private bool win;
 
             [Header("Object attached")]
@@ -35,6 +36,7 @@ namespace LeRafiot
             {
                 base.Start(); //Do not erase this line!
                 rope = GetComponent<LineRenderer>();
+                loseScript = GetComponent<LoseConditions>();
             }
 
             //FixedUpdate is called on a fixed time.
@@ -53,6 +55,7 @@ namespace LeRafiot
                     if ((Input.GetButtonDown("A_Button") || Input.GetKeyDown(KeyCode.Space)) && !Manager.Instance.panel.activeSelf)
                     {
                         attachedTo.transform.position -= new Vector3(0, -pullingUpRopeSize);            //Pulling up the chest
+                        SoundManager123Requin.Instance.sfxSound[2].Play();
                     }
                 }
                 else
@@ -62,6 +65,8 @@ namespace LeRafiot
                         win = true;
                         rope.SetPosition(1, new Vector3(0, 0));
                         Manager.Instance.Result(true);
+                        loseScript.buttonAnimator.gameObject.SetActive(false);
+                        SoundManager123Requin.Instance.sfxSound[0].Play();
                     }
                 }
             }

@@ -34,8 +34,6 @@ namespace LeRafiot
             [Range(1, 50)] public int ropeSize3 = 16;
             [Range(1, 10)] public int pullingUpRopeSize3 = 1;
 
-            public bool sharkSysteme1;
-
             public int tickBeforeSpawn3;
             public int tickSharkStay3;
 
@@ -71,7 +69,9 @@ namespace LeRafiot
                 {
                     ropeScript.ropeSize = ropeSize1;
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize1;
-                    ropeScript.attachedTo.transform.localPosition = new Vector3(0, ropeScript.ropeSize);                    
+                    ropeScript.attachedTo.transform.localPosition = new Vector3(0, ropeScript.ropeSize);
+
+                    SharkManager.Instance.sharkSysteme = false;
                 }
                 else if (Manager.Instance.currentDifficulty == Manager.Difficulty.MEDIUM)
                 {
@@ -81,6 +81,8 @@ namespace LeRafiot
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize2;
                     ropeScript.pullingDownRopeSize = pullingDownRopeSize2;
                     ropeScript.attachedTo.transform.localPosition = new Vector3(0, ropeScript.ropeSize);
+
+                    SharkManager.Instance.sharkSysteme = false;
                 }
                 else if (Manager.Instance.currentDifficulty == Manager.Difficulty.HARD)
                 {
@@ -88,7 +90,8 @@ namespace LeRafiot
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize3;
                     ropeScript.attachedTo.transform.localPosition = new Vector3(0, ropeScript.ropeSize);
 
-                    SharkManager.Instance.sharkSysteme = sharkSysteme1;
+                    SharkManager.Instance.sharkSysteme = true;
+
                     SharkManager.Instance.tickBeforeSpawn = tickBeforeSpawn3;
                     SharkManager.Instance.tickSharkStay = tickSharkStay3;
                     SharkManager.Instance.startTick = startTick3;
