@@ -38,7 +38,6 @@ namespace LeRafiot
             private bool canFlash;
 
             private bool lockSpawn;
-            private int flashCounter;
 
             #endregion
 
@@ -52,7 +51,6 @@ namespace LeRafiot
                 
                 counterTick = 0;
                 counterTickShark = 0;
-                flashCounter = 0;
             }
 
             //FixedUpdate is called on a fixed time.
@@ -70,47 +68,7 @@ namespace LeRafiot
             }
 
             void SharkFlash()
-            {
-                /*if (counterTick > 0 && counterTick != tickBeforeSpawn)                  //For 6 flashs
-                {                  
-                    if (timer >= 60 / bpm && flashCounter == 0)
-                    {
-                        if (canFlash)
-                        {
-                            sign.gameObject.SetActive(true);
-                            canFlash = false;
-                            flashCounter = 1;
-                        }
-                    }
-                    else if (timer >= (60 / bpm) / 4 && flashCounter == 1)
-                    {
-                        if (!canFlash)
-                        {
-                            sign.gameObject.SetActive(false);
-                            canFlash = true;
-                            flashCounter = 2;
-                        }
-                    }
-                    else if (timer >= ((60 / bpm) / 4) * 2 && flashCounter == 2)
-                    {
-                        if (canFlash)
-                        {
-                            sign.gameObject.SetActive(true);
-                            canFlash = false;
-                            flashCounter = 3;
-                        }
-                    }
-                    else if (timer >= ((60 / bpm) / 4) * 3 && flashCounter == 3)
-                    {
-                        if (!canFlash)
-                        {
-                            sign.gameObject.SetActive(false);
-                            canFlash = true;
-                            flashCounter = 0;
-                        }
-                    }
-                }*/
-
+            {              
                 if (counterTick > 0 && counterTick != tickBeforeSpawn)                  //For 2 flashs
                 {
                     if (timer >= 60 / bpm)
