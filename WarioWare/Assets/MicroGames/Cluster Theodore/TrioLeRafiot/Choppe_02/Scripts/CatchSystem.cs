@@ -20,6 +20,7 @@ namespace LeRafiot
 
 			private bool drinkInZone;
 			private GameObject drinkTriggered;
+            public bool goodDrink;
 			#endregion
 
 			// Start is called before the first frame update
@@ -27,6 +28,7 @@ namespace LeRafiot
 			{
 				colorBase = GetComponent<SpriteRenderer>().color;
 				drinkInZone = false;
+
 			}
 
 			// Update is called once per frame
@@ -38,8 +40,17 @@ namespace LeRafiot
 					
 					if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A_Button") && !Manager.Instance.panel.activeSelf)
                     {
-						Destroy(drinkTriggered);
-						GetComponent<SpriteRenderer>().color = Color.green;
+                        if (goodDrink)
+                        {
+						    Destroy(drinkTriggered);
+                            Manager.Instance.Result(true);
+                        }
+                        else
+                        {
+                            Destroy(drinkTriggered);
+                            Manager.Instance.Result(false);
+
+                        }
 					}
 				}
                 else
@@ -50,11 +61,21 @@ namespace LeRafiot
 
             private void OnTriggerEnter2D(Collider2D col)
             {
+                
+
+                if (col.CompareTag("Ennemy2"))
+                {
+                    goodDrink = true;
+                    drinkTriggered = col.gameObject;
+                    drinkInZone = true;
+                }
+
                 if (col.CompareTag("Ennemy1"))
                 {
-					drinkInZone = true;
-					drinkTriggered = col.gameObject;
-				}
+                    drinkInZone = true;
+                    drinkTriggered = col.gameObject;
+                }
+
             }
 
             private void OnTriggerExit2D(Collider2D col)
@@ -63,6 +84,11 @@ namespace LeRafiot
                 {
 					drinkInZone = false;					
 				}
+
+                if (col.CompareTag("Ennemy2"))
+                {
+                    goodDrink = false;
+                }
             }
         }
 	}

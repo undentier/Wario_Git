@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink Purple
       objectReference: {fileID: 0}
+    - target: {fileID: 5267858691693164975, guid: ca4bf1901cdcda44890578cdb5c9e7c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ennemy2
+      objectReference: {fileID: 0}
     - target: {fileID: 7231906153771706161, guid: ca4bf1901cdcda44890578cdb5c9e7c1,
         type: 3}
       propertyPath: m_Color.r
