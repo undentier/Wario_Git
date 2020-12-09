@@ -9,7 +9,6 @@ namespace LeRafiot
     {
         public class DrinkDestructor : MonoBehaviour
         {
-
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 if (collision.gameObject.CompareTag("Ennemy2"))
@@ -17,12 +16,12 @@ namespace LeRafiot
                     DrinkManager.Instance.canSpawn = false;
                     Destroy(collision.gameObject);
                     Manager.Instance.Result(false);
+                    SoundManagerChoppe.Instance.sfxSound[1].Play();
                 }
                 else
                 {
                     Destroy(collision.gameObject);
                 }
-                
             }
 
         }

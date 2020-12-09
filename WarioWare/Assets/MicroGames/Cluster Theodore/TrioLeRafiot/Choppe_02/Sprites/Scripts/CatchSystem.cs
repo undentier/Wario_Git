@@ -28,7 +28,6 @@ namespace LeRafiot
 			{
 				colorBase = GetComponent<SpriteRenderer>().color;
 				drinkInZone = false;
-
 			}
 
 			// Update is called once per frame
@@ -45,13 +44,14 @@ namespace LeRafiot
                             DrinkManager.Instance.canSpawn = false;
                             Destroy(drinkTriggered);
                             Manager.Instance.Result(true);
+                            SoundManagerChoppe.Instance.sfxSound[0].Play();
                         }
                         else
                         {
                             DrinkManager.Instance.canSpawn = false;
                             Destroy(drinkTriggered);
                             Manager.Instance.Result(false);
-
+                            SoundManagerChoppe.Instance.sfxSound[1].Play();
                         }
 					}
 				}
@@ -63,8 +63,6 @@ namespace LeRafiot
 
             private void OnTriggerEnter2D(Collider2D col)
             {
-                
-
                 if (col.CompareTag("Ennemy2"))
                 {
                     goodDrink = true;
@@ -77,7 +75,6 @@ namespace LeRafiot
                     drinkInZone = true;
                     drinkTriggered = col.gameObject;
                 }
-
             }
 
             private void OnTriggerExit2D(Collider2D col)

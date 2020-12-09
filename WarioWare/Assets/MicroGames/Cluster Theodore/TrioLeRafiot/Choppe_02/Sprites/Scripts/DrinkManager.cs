@@ -38,12 +38,12 @@ namespace LeRafiot
 
             [Header("Difficulty")]
             public bool vanishUi;
-            public float timeToFade;
+            [HideInInspector] public int tickToFade;
 
             private GameObject spawnDrink;
             private int rateStock;
             private int numberOfSpawn;
-            private Color alphaColor;
+            //private Color alphaColor;
             #endregion
 
             public override void Start()
@@ -52,7 +52,7 @@ namespace LeRafiot
 
                 ManagerInit();
 
-                alphaColor.a = 0;
+                //alphaColor.a = 0;
                 rateStock = goodSpawnRate;
                 canSpawn = true;
 
@@ -114,7 +114,6 @@ namespace LeRafiot
                             rateStock += chanceAdd;
                             numberOfSpawn++;
                         }
-
                         else
                         {
                             spawnDrink = Instantiate(chosenOne, spawnPoint.transform.position, spawnPoint.transform.rotation);
@@ -146,18 +145,24 @@ namespace LeRafiot
                 float t = 0;
                 while (t < 1)
                 {
-                    t += Time.deltaTime / timeToMove;
-                    transform.position = Vector3.Lerp(currentPos, position, t);
-                    yield return null;
+                    if (transform != null)
+                    {
+                        t += Time.deltaTime / timeToMove;
+                        transform.position = Vector3.Lerp(currentPos, position, t);
+                        yield return null;
+                    }
+                    else
+                    {
+                        yield return null;
+                    }
                 }
             }
 
             IEnumerator CleanUI()
             {
-                yield return new WaitForSeconds((2 * (60 / bpm)));
+                yield return new WaitForSeconds((tickToFade * (60 / bpm)));
                 bulle.gameObject.SetActive(false);
-                drinkUi.gameObject.SetActive(false);
-                
+                drinkUi.gameObject.SetActive(false);    
             }
         }
     }

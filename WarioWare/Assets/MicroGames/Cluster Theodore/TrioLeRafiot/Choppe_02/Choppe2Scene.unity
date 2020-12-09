@@ -1321,6 +1321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 974861492}
+  - component: {fileID: 974861493}
   m_Layer: 0
   m_Name: DifficultyChanger
   m_TagString: Untagged
@@ -1342,6 +1343,48 @@ Transform:
   m_Father: {fileID: 1690669383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &974861493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974861491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6203ee4bf2a90334aaadd1a6dcd87bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bpm: 60
+  currentDifficulty: 0
+  timer: 0
+  currentTime: 0
+  managerScript: {fileID: 1229517798}
+  drinkListEasy:
+  - {fileID: 532081365018000316, guid: fc658d96a4ce64145b7059e3620adbf8, type: 3}
+  - {fileID: 661652345285555831, guid: 32e740253221a9147973c20a20ae8dcd, type: 3}
+  - {fileID: 4079966497976853736, guid: d3d7db3007eebe849bca23f0d7a8044e, type: 3}
+  - {fileID: 8116771862053019600, guid: a3c9cfe18796e3648ae8f8def57f01a1, type: 3}
+  - {fileID: 947106609452079041, guid: f96adb78911cec547a87344ba343614b, type: 3}
+  - {fileID: 6588692499340569610, guid: e6e55e875c46f4f46940f1203ab06ef7, type: 3}
+  - {fileID: 5267858691693164975, guid: ca4bf1901cdcda44890578cdb5c9e7c1, type: 3}
+  drinkListMedium:
+  - {fileID: 532081365018000316, guid: fc658d96a4ce64145b7059e3620adbf8, type: 3}
+  - {fileID: 661652345285555831, guid: 32e740253221a9147973c20a20ae8dcd, type: 3}
+  - {fileID: 4079966497976853736, guid: d3d7db3007eebe849bca23f0d7a8044e, type: 3}
+  - {fileID: 8116771862053019600, guid: a3c9cfe18796e3648ae8f8def57f01a1, type: 3}
+  - {fileID: 947106609452079041, guid: f96adb78911cec547a87344ba343614b, type: 3}
+  - {fileID: 6588692499340569610, guid: e6e55e875c46f4f46940f1203ab06ef7, type: 3}
+  - {fileID: 5267858691693164975, guid: ca4bf1901cdcda44890578cdb5c9e7c1, type: 3}
+  tickBubbleDisappear: 2
+  drinkListHard:
+  - {fileID: 532081365018000316, guid: fc658d96a4ce64145b7059e3620adbf8, type: 3}
+  - {fileID: 661652345285555831, guid: 32e740253221a9147973c20a20ae8dcd, type: 3}
+  - {fileID: 4079966497976853736, guid: d3d7db3007eebe849bca23f0d7a8044e, type: 3}
+  - {fileID: 8116771862053019600, guid: a3c9cfe18796e3648ae8f8def57f01a1, type: 3}
+  - {fileID: 947106609452079041, guid: f96adb78911cec547a87344ba343614b, type: 3}
+  - {fileID: 6588692499340569610, guid: e6e55e875c46f4f46940f1203ab06ef7, type: 3}
+  - {fileID: 5267858691693164975, guid: ca4bf1901cdcda44890578cdb5c9e7c1, type: 3}
 --- !u!1 &1051636933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,21 +1758,14 @@ MonoBehaviour:
   goodSpawnRate: 0
   chanceAdd: 20
   maxDrinkSpawn: 6
-  drinkList:
-  - {fileID: 532081365018000316, guid: fc658d96a4ce64145b7059e3620adbf8, type: 3}
-  - {fileID: 661652345285555831, guid: 32e740253221a9147973c20a20ae8dcd, type: 3}
-  - {fileID: 4079966497976853736, guid: d3d7db3007eebe849bca23f0d7a8044e, type: 3}
-  - {fileID: 8116771862053019600, guid: a3c9cfe18796e3648ae8f8def57f01a1, type: 3}
-  - {fileID: 947106609452079041, guid: f96adb78911cec547a87344ba343614b, type: 3}
-  - {fileID: 6588692499340569610, guid: e6e55e875c46f4f46940f1203ab06ef7, type: 3}
-  - {fileID: 5267858691693164975, guid: ca4bf1901cdcda44890578cdb5c9e7c1, type: 3}
+  drinkList: []
   actualDrink: []
   chosenOne: {fileID: 0}
   canSpawn: 1
   drinkUi: {fileID: 1388792691}
   bulle: {fileID: 1896964296}
-  vanishUi: 1
-  timeToFade: 2
+  vanishUi: 0
+  tickToFade: 0
 --- !u!1 &1388792689
 GameObject:
   m_ObjectHideFlags: 0
