@@ -21,6 +21,8 @@ namespace LeRafiot
 
             [Header("Object attached")]
             public GameObject attachedTo;
+            public Animator playerAnimator;
+            private int spriteNumber;
 
             //Rope settings
             [HideInInspector] public int ropeSize;
@@ -37,6 +39,7 @@ namespace LeRafiot
                 base.Start(); //Do not erase this line!
                 rope = GetComponent<LineRenderer>();
                 loseScript = GetComponent<LoseConditions>();
+                spriteNumber = 1;
             }
 
             //FixedUpdate is called on a fixed time.
@@ -56,6 +59,8 @@ namespace LeRafiot
                     {
                         attachedTo.transform.position -= new Vector3(0, -pullingUpRopeSize);            //Pulling up the chest
                         SoundManager123Requin.Instance.sfxSound[2].Play();
+
+                        playerAnimator.SetTrigger("PullUp");
                     }
                 }
                 else
@@ -74,6 +79,26 @@ namespace LeRafiot
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
+                if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("PlayerPullUp") && !Manager.Instance.panel.activeSelf)
+                {
+                    spriteNumber++;
+
+                    if (spriteNumber == 1)
+                    {
+                        playerAnimator.SetTrigger("Face");
+                    }
+                    else if (spriteNumber == 2)
+                    {
+                        playerAnimator.SetTrigger("Left");
+                    }
+                    else if (spriteNumber == 3)
+                    {
+                        playerAnimator.SetTrigger("Right");
+
+                        spriteNumber = 0;
+                    }
+                }
+                
                 if (rope.GetPosition(1).y > 0)
                 {
                     if (level3 && !Manager.Instance.panel.activeSelf)
