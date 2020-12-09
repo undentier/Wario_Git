@@ -840,7 +840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600790090}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.36, y: -0.16, z: 0}
+  m_LocalPosition: {x: 10.27, y: 0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1690669383}
@@ -1713,21 +1713,23 @@ MonoBehaviour:
   endPoint: {fileID: 689955395}
   tickDrinkStay: 2
   goodSpawnRate: 0
-  chanceAdd: 30
+  chanceAdd: 20
   maxDrinkSpawn: 6
   drinkList:
-  - {fileID: 7176292281941320342, guid: fc658d96a4ce64145b7059e3620adbf8, type: 3}
-  - {fileID: 2957019525838484577, guid: 32e740253221a9147973c20a20ae8dcd, type: 3}
-  - {fileID: 7486734482048043197, guid: d3d7db3007eebe849bca23f0d7a8044e, type: 3}
-  - {fileID: 8824738619488993555, guid: a3c9cfe18796e3648ae8f8def57f01a1, type: 3}
-  - {fileID: 2872220980486476676, guid: f96adb78911cec547a87344ba343614b, type: 3}
-  - {fileID: 8277435818106805902, guid: 7d6b917c4d597104db947f7368d62d80, type: 3}
-  - {fileID: 6354923800903688310, guid: e87543259b6c74e4a8eb928f654a9c11, type: 3}
+  - {fileID: 532081365018000316, guid: fc658d96a4ce64145b7059e3620adbf8, type: 3}
+  - {fileID: 661652345285555831, guid: 32e740253221a9147973c20a20ae8dcd, type: 3}
+  - {fileID: 4079966497976853736, guid: d3d7db3007eebe849bca23f0d7a8044e, type: 3}
+  - {fileID: 8116771862053019600, guid: a3c9cfe18796e3648ae8f8def57f01a1, type: 3}
+  - {fileID: 947106609452079041, guid: f96adb78911cec547a87344ba343614b, type: 3}
+  - {fileID: 6588692499340569610, guid: e6e55e875c46f4f46940f1203ab06ef7, type: 3}
+  - {fileID: 5267858691693164975, guid: ca4bf1901cdcda44890578cdb5c9e7c1, type: 3}
   actualDrink: []
   chosenOne: {fileID: 0}
   canSpawn: 1
   drinkUi: {fileID: 1388792691}
   bulle: {fileID: 1896964296}
+  vanishUi: 1
+  timeToFade: 2
 --- !u!1 &1388792689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,16 +1755,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388792689}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2065227617}
-  m_RootOrder: 3
+  m_Father: {fileID: 1896964295}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 411, y: 197}
+  m_AnchoredPosition: {x: 5, y: 10.190445}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388792691
@@ -2296,7 +2298,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1388792690}
   m_Father: {fileID: 2065227617}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2534,7 +2537,6 @@ RectTransform:
   - {fileID: 21349657}
   - {fileID: 111105451}
   - {fileID: 1896964295}
-  - {fileID: 1388792690}
   m_Father: {fileID: 303955767}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

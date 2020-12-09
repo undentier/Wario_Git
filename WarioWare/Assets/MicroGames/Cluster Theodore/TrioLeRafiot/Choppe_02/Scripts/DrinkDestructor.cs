@@ -12,8 +12,9 @@ namespace LeRafiot
 
             private void OnTriggerEnter2D(Collider2D collision)
             {
-                if (collision.CompareTag("Ennemy2"))
+                if (collision.gameObject.CompareTag("Ennemy2"))
                 {
+                    DrinkManager.Instance.canSpawn = false;
                     Destroy(collision.gameObject);
                     Manager.Instance.Result(false);
                 }
@@ -21,6 +22,7 @@ namespace LeRafiot
                 {
                     Destroy(collision.gameObject);
                 }
+                
             }
 
         }

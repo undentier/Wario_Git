@@ -42,11 +42,13 @@ namespace LeRafiot
                     {
                         if (goodDrink)
                         {
-						    Destroy(drinkTriggered);
+                            DrinkManager.Instance.canSpawn = false;
+                            Destroy(drinkTriggered);
                             Manager.Instance.Result(true);
                         }
                         else
                         {
+                            DrinkManager.Instance.canSpawn = false;
                             Destroy(drinkTriggered);
                             Manager.Instance.Result(false);
 

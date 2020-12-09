@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1335051140934124791}
   - component: {fileID: 7231906153771706161}
-  - component: {fileID: 5507734396474841759}
-  - component: {fileID: 1097585135712612830}
+  - component: {fileID: 6407531357455166668}
+  - component: {fileID: 1579009271739333672}
   m_Layer: 0
   m_Name: Drink
   m_TagString: Ennemy1
@@ -83,23 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &5507734396474841759
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5267858691693164975}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.91215193, y: -4.775455}
-  m_Size: {x: 6.3135524, y: 24.45539}
-  m_Direction: 0
---- !u!50 &1097585135712612830
+--- !u!50 &6407531357455166668
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -120,3 +104,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &1579009271739333672
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5267858691693164975}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.91215193, y: -4.775455}
+  m_Size: {x: 6.3135524, y: 24.45539}
+  m_Direction: 0

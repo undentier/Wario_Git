@@ -36,9 +36,14 @@ namespace LeRafiot
             public Image drinkUi;
             public Image bulle;
 
+            [Header("Difficulty")]
+            public bool vanishUi;
+            public float timeToFade;
+
             private GameObject spawnDrink;
             private int rateStock;
             private int numberOfSpawn;
+            private Color alphaColor;
             #endregion
 
             public override void Start()
@@ -47,13 +52,12 @@ namespace LeRafiot
 
                 ManagerInit();
 
-                DrinkChoice();
-
-                UiSystem();
-
-
+                alphaColor.a = 0;
                 rateStock = goodSpawnRate;
                 canSpawn = true;
+
+                DrinkChoice();
+                UiSystem();
 
             }
 
@@ -63,7 +67,6 @@ namespace LeRafiot
                 base.FixedUpdate(); //Do not erase this line!
 
                 actualDrink.RemoveAll(list_item => list_item == null);
-
             }
 
             //TimedUpdate is called once every tick.
@@ -88,8 +91,8 @@ namespace LeRafiot
             {
                 int random = Random.Range(0, drinkList.Count);
                 chosenOne = drinkList[random];
-                chosenOne.tag = "Ennemy2";
                 drinkList.RemoveAt(random);
+               
             }
 
             void SpawnSystem()
@@ -129,6 +132,11 @@ namespace LeRafiot
             {
                 drinkUi.sprite = chosenOne.GetComponent<SpriteRenderer>().sprite;
                 drinkUi.color = chosenOne.GetComponent<SpriteRenderer>().color;
+
+                if (vanishUi)
+                {
+                    StartCoroutine(CleanUI());
+                }
             }
 
             public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
@@ -141,6 +149,14 @@ namespace LeRafiot
                     transform.position = Vector3.Lerp(currentPos, position, t);
                     yield return null;
                 }
+            }
+
+            IEnumerator CleanUI()
+            {
+                yield return new WaitForSeconds((2 * (60 / bpm)));
+                bulle.gameObject.SetActive(false);
+                drinkUi.gameObject.SetActive(false);
+                
             }
         }
     }
