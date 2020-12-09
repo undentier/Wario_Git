@@ -120,6 +120,7 @@ namespace LeRafiot
                             spawnDrink = Instantiate(chosenOne, spawnPoint.transform.position, spawnPoint.transform.rotation);
                             StartCoroutine(MoveToPosition(spawnDrink.transform, endPoint.transform.position, (tickDrinkStay * (60 / bpm))));
                             actualDrink.Add(spawnDrink);
+                            spawnDrink.tag = "Ennemy2";
 
                             rateStock = 0;
                             numberOfSpawn++;
