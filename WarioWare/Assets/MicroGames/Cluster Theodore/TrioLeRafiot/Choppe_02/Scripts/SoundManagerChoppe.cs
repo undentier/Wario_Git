@@ -36,6 +36,8 @@ namespace LeRafiot
                     default:
                         break;
                 }
+                SoundManagerChoppe.Instance.sfxSound[2].Play();
+
 
             }
 
