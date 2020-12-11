@@ -75,6 +75,7 @@ namespace LeRafiot
                     {
                         if (canFlash)
                         {
+                            SoundManager123Requin.Instance.sfxSound[3].Play();
                             sign.gameObject.SetActive(true);
                             canFlash = false;
                         }
@@ -112,6 +113,7 @@ namespace LeRafiot
 
                             if (lockSpawn == false)
                             {
+                                SoundManager123Requin.Instance.sfxSound[3].Play();
                                 sign.gameObject.SetActive(true);
                                 lockSpawn = true;
                                 sharkIsHere = true;
