@@ -44,6 +44,7 @@ namespace LeRafiot
                             DrinkManager.Instance.canSpawn = false;
                             Destroy(drinkTriggered);
                             Manager.Instance.Result(true);
+                            SoundManagerChoppe.Instance.sfxSound[4].Play();
                             SoundManagerChoppe.Instance.sfxSound[0].Play();
                         }
                         else
@@ -51,6 +52,7 @@ namespace LeRafiot
                             DrinkManager.Instance.canSpawn = false;
                             Destroy(drinkTriggered);
                             Manager.Instance.Result(false);
+                            SoundManagerChoppe.Instance.sfxSound[5].Play();
                             SoundManagerChoppe.Instance.sfxSound[1].Play();
                         }
 					}

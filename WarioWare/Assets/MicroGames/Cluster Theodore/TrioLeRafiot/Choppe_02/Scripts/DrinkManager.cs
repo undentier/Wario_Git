@@ -109,6 +109,7 @@ namespace LeRafiot
                             int randomNumber = Random.Range(1, drinkList.Count);
 
                             spawnDrink = Instantiate(drinkList[randomNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
+                            SoundManagerChoppe.Instance.sfxSound[3].Play();
                             StartCoroutine(MoveToPosition(spawnDrink.transform, endPoint.transform.position, (tickDrinkStay * (60 / bpm))));
                             actualDrink.Add(spawnDrink);
 
@@ -118,6 +119,7 @@ namespace LeRafiot
                         else
                         {
                             spawnDrink = Instantiate(chosenOne, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                            SoundManagerChoppe.Instance.sfxSound[3].Play();
                             StartCoroutine(MoveToPosition(spawnDrink.transform, endPoint.transform.position, (tickDrinkStay * (60 / bpm))));
                             actualDrink.Add(spawnDrink);
                             spawnDrink.tag = "Ennemy2";
