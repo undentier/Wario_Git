@@ -84,7 +84,7 @@ namespace LeRafiot
                         }
                         else
                         {
-                            canMove = false
+                            canMove = false;
                             Manager.Instance.Result(false);
                             SoundManagerPlanche.Instance.sfxSound[1].Play();
                         }

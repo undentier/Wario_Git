@@ -65,7 +65,7 @@ namespace LeRafiot
 
             void SetValues()
             {
-                if (Manager.Instance.currentDifficulty == Manager.Difficulty.EASY)
+                if (Manager.Instance.currentDifficulty == Difficulty.EASY)
                 {
                     ropeScript.ropeSize = ropeSize1;
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize1;
@@ -73,7 +73,7 @@ namespace LeRafiot
 
                     SharkManager.Instance.sharkSysteme = false;
                 }
-                else if (Manager.Instance.currentDifficulty == Manager.Difficulty.MEDIUM)
+                else if (Manager.Instance.currentDifficulty == Difficulty.MEDIUM)
                 {
                     ropeScript.level3 = true;
 
@@ -84,7 +84,7 @@ namespace LeRafiot
 
                     SharkManager.Instance.sharkSysteme = false;
                 }
-                else if (Manager.Instance.currentDifficulty == Manager.Difficulty.HARD)
+                else if (Manager.Instance.currentDifficulty == Difficulty.HARD)
                 {
                     ropeScript.ropeSize = ropeSize3;
                     ropeScript.pullingUpRopeSize = pullingUpRopeSize3;

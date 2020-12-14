@@ -54,17 +54,17 @@ namespace LeRafiot
 
             void SetValues()
             {
-                if (Manager.Instance.currentDifficulty == Manager.Difficulty.EASY)
+                if (Manager.Instance.currentDifficulty == Difficulty.EASY)
                 {
                     managerScript.drinkList = new List<GameObject>(drinkListEasy);
                     managerScript.vanishUi = false;
                 }
-                else if (Manager.Instance.currentDifficulty == Manager.Difficulty.MEDIUM)
+                else if (Manager.Instance.currentDifficulty == Difficulty.MEDIUM)
                 {
                     managerScript.drinkList = new List<GameObject>(drinkListMedium);
                     managerScript.vanishUi = false;
                 }
-                else if (Manager.Instance.currentDifficulty == Manager.Difficulty.HARD)
+                else if (Manager.Instance.currentDifficulty == Difficulty.HARD)
                 {
                     managerScript.drinkList = new List<GameObject>(drinkListHard);
                     managerScript.tickToFade = tickBubbleDisappear;

@@ -14,10 +14,10 @@ namespace ExampleScene
             base.Start();
             switch (bpm)
             {
-                case (float)Manager.BPM.Slow:
+                case (float)BPM.Slow:
                     globalMusic[0].Play();
                     break;
-                case (float)Manager.BPM.SuperFast:
+                case (float)BPM.SuperFast:
                     globalMusic[1].Play();
                     break;
                 default:
@@ -26,13 +26,13 @@ namespace ExampleScene
 
         }
 
-        //Update call on a fixed time
+        //Update called on a fixed time
         public override void FixedUpdate()
         {
             base.FixedUpdate();
         }
 
-        //Update call every tics
+        //Update call every ticks
         public override void TimedUpdate()
         {
             base.TimedUpdate();

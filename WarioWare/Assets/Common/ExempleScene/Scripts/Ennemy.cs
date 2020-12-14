@@ -15,7 +15,7 @@ namespace ExampleScene
 
         private void Start()
         {
-            if(Manager.Instance.currentDifficulty >= Manager.Difficulty.MEDIUM)
+            if(Manager.Instance.currentDifficulty >= Difficulty.MEDIUM)
             {
                 speed = speed * 1.2f;
             }

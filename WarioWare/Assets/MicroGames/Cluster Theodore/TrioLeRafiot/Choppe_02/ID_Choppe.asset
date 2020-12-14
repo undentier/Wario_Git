@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cluster: 0
   trio: Brigantin
-  haptiqueChal: 0
-  inputChal: 0
   indexEnum: 0
   verbe: Catch  press A
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: 10c7c78062ee58540b288431812e4126, type: 3}
     required: 0
     buildIndex: 3
+  inputs: {fileID: 0}
   currentDifficulty: 0
+  idWeight: 0
+  hasBarrel: 0
