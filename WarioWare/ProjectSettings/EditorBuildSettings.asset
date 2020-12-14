@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MicroGames/Cluster Theodore/TrioLeRafiot/Choppe_02/Choppe2Scene.unity
     guid: 10c7c78062ee58540b288431812e4126
-  - enabled: 1
+  - enabled: 0
     path: Assets/MicroGames/Cluster Theodore/TrioLeRafiot/Choppe_02/_Scenes/Guillaume_Scene.unity
     guid: d4d37a6f1fce94e48b270874eaf21f46
+  - enabled: 1
+    path: Assets/MicroGames/Cluster Theodore/TrioLeRafiot/Planche_03/Planche3Scene.unity
+    guid: 2eb72f07571d9f24f83eee65b45c087d
   m_configObjects: {}
