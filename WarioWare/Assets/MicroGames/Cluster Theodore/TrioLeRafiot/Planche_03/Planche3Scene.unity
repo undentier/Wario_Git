@@ -237,7 +237,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8734370272913395134, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 84a99ed8d1d2b1848990122337d196f5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e0e1a09b9839a3f41a8c60fa483e2a81, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107949452}
-  - component: {fileID: 107949451}
+  - component: {fileID: 107949453}
   m_Layer: 0
   m_Name: --UI--
   m_TagString: Untagged
@@ -346,27 +346,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &107949451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107949450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363cbf6e3018e944a9cea0108d6b3c5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bpm: 60
-  currentDifficulty: 0
-  timer: 0
-  currentTime: 0
-  panel: {fileID: 1013205880}
-  resultText: {fileID: 741208535}
-  bpmText: {fileID: 404476051}
-  timerUI: {fileID: 2131160805}
-  tickNumber: {fileID: 2071344432}
 --- !u!4 &107949452
 Transform:
   m_ObjectHideFlags: 0
@@ -383,6 +362,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &107949453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107949450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b790b8cf608854ab1149a4a29a5d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bpm: 60
+  currentDifficulty: 0
+  timer: 0
+  currentTime: 0
+  panel: {fileID: 1013205880}
+  resultText: {fileID: 741208535}
+  bpmText: {fileID: 404476051}
+  timerUI: {fileID: 2131160805}
+  tickNumber: {fileID: 2071344432}
 --- !u!1 &237443348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 517964234196080497, guid: ff2b9150c058e4440a87cee0dae87345,
@@ -1302,13 +1302,13 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
+  numberRandomSpawn: 2
   target:
   - {fileID: 381927135}
   - {fileID: 1032624345}
   - {fileID: 237443348}
   - {fileID: 87106393}
   - {fileID: 408232305}
-  numberRandomSpawn: 2
 --- !u!4 &1113647829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 517964235206730928, guid: ff2b9150c058e4440a87cee0dae87345,
@@ -1426,7 +1426,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8734370272913395134, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: eaf591c86546b4d4a8e337b3fdf5e76d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 155fcf8f34785084296e56535f48dd71, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -1662,7 +1662,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8734370272913395134, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 59265fd38520c6942ba352272dd8823b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ed12246751f40be41994b6840476a0ce, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1966,7 +1966,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8734370272913395134, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: ec9aa536d82ef6248a0e51e0ef5424cb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 158cbf6d4c5cbf94d800177ffcd123e2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -2259,6 +2259,11 @@ PrefabInstance:
     - target: {fileID: 1396955539778056848, guid: b5e3fef6f138b934ab0ef5888690cbef,
         type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396955539778056848, guid: b5e3fef6f138b934ab0ef5888690cbef,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1396955539778056849, guid: b5e3fef6f138b934ab0ef5888690cbef,

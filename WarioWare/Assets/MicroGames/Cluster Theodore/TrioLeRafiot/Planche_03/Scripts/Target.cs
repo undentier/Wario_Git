@@ -7,26 +7,30 @@ namespace LeRafiot
 {
     namespace Planche
     {
+        /// <summary>
+        /// Guillaume Rogé
+        /// This script is the behavior of target
+        /// </summary>
+
         public class Target : TimedBehaviour
         {
             #region Variable
             [Header ("Values")]
-            public int tickToFade;
+            public int tickToIncrase;
+            public Vector2 startScale;
+            public Vector2 finalScale;
 
             [Header ("Start bool")]
             public bool activate;
 
-            private SpriteRenderer sprite;
-            private bool coolDown;
-            private Color startColor;
+            private bool coolDown;       
             #endregion
 
             public override void Start()
             {
                 base.Start(); //Do not erase this line!
 
-                sprite = GetComponent<SpriteRenderer>();
-                startColor = sprite.color;
+                transform.localScale = startScale;
             }
 
             public override void FixedUpdate()
@@ -38,7 +42,7 @@ namespace LeRafiot
                     if (coolDown == false)
                     {
                         coolDown = true;
-                        StartCoroutine(Waiting(sprite.color, Color.white, (tickToFade * (60 / bpm))));
+                        StartCoroutine(IncreaseScale(startScale, finalScale, (tickToIncrase * (60 / bpm))));
                     }
                 }
             }
@@ -48,23 +52,21 @@ namespace LeRafiot
   
             }
 
-
-            public IEnumerator Waiting(Color color, Color finalColor, float timeToFade)
+            public IEnumerator IncreaseScale(Vector2 scale, Vector2 endScale, float timeToFade)
             {
-                Color actualColor = color;
+                Vector2 currentScale = scale;
                 float t = 0;
                 while (t < 1)
                 {
-                    t += Time.fixedDeltaTime / timeToFade;
-                    sprite.color = Color.Lerp(actualColor, finalColor, t);
+                    t += Time.deltaTime / timeToFade;
+                    transform.localScale = Vector3.Lerp(currentScale, endScale, t);
                     yield return null;
                 }
                 activate = false;
                 coolDown = false;
-                sprite.color = startColor;
+                transform.localScale = startScale;
 
                 RandomEnemySpawn.Instance.target.Add(gameObject);
-
             }
         }
 

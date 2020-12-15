@@ -15,7 +15,7 @@ MonoBehaviour:
   cluster: 0
   trio: LeRafiot
   indexEnum: 3
-  verbe: Dodge
+  verbe: Dodge   LT/RT
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: 2eb72f07571d9f24f83eee65b45c087d, type: 3}
     required: 0

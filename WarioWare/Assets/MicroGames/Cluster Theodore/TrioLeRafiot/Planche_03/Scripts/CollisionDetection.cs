@@ -8,6 +8,11 @@ namespace LeRafiot
 {
     namespace Planche
     {
+        /// <summary>
+        /// Guillaume Rogé
+        /// This script trigger the detection of player
+        /// </summary>
+
         public class CollisionDetection : MonoBehaviour
         {
             private void OnTriggerEnter2D(Collider2D collision)

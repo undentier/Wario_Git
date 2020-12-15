@@ -12,6 +12,7 @@ namespace LeRafiot
         /// Guillaume Rogé
         /// Script who choice x random target and activate it
         /// </summary>
+        
         public class RandomEnemySpawn : TimedBehaviour
         {
             public static RandomEnemySpawn Instance;
@@ -30,7 +31,6 @@ namespace LeRafiot
                 base.Start(); //Do not erase this line!
 
                 ManagerInit();
-
             }
 
             //FixedUpdate is called on a fixed time.
@@ -42,11 +42,14 @@ namespace LeRafiot
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
-                for (int i = 0; i < numberRandomSpawn; i++)
+                if(!Manager.Instance.panel.activeSelf)
                 {
-                    int random = Random.Range(0, target.Count);
-                    target[random].GetComponent<Target>().activate = true;
-                    target.Remove(target[random]);
+                    for (int i = 0; i < numberRandomSpawn; i++)
+                    {
+                        int random = Random.Range(0, target.Count);
+                        target[random].GetComponent<Target>().activate = true;
+                        target.Remove(target[random]);
+                    }
                 }
             }
 
@@ -60,9 +63,7 @@ namespace LeRafiot
                 {
                     Destroy(gameObject);
                 }
-            }
-
-           
+            }        
         }
     }
 }
