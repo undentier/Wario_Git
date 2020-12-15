@@ -15,7 +15,16 @@ namespace LeRafiot
         public class Target : TimedBehaviour
         {
             #region Variable
-            [Header ("Values")]
+            [Header("Enemy")]
+            public GameObject enemy;
+            public int tickEnemyToTravel;
+
+            private GameObject actualEnemy;
+
+            [Header("Enemy Position")]
+            public Transform way;
+
+            [Header("Alert")]
             public int tickToIncrase;
             public Vector2 startScale;
             public Vector2 finalScale;
@@ -67,6 +76,35 @@ namespace LeRafiot
                 transform.localScale = startScale;
 
                 RandomEnemySpawn.Instance.target.Add(gameObject);
+
+                if(enemy != null)
+                {
+                    actualEnemy = Instantiate(enemy, way.GetChild(0).transform.position, way.GetChild(0).transform.rotation);
+                    StartCoroutine(MoveToPositioninCurve(actualEnemy.transform, (tickEnemyToTravel * (60 / bpm))));
+                }
+            }
+
+            public IEnumerator MoveToPositioninCurve(Transform transform, float timeToMove)
+            {
+                Vector2 p0 = way.GetChild(0).position;
+                Vector2 p1 = way.GetChild(1).position;
+                Vector2 p2 = way.GetChild(2).position;
+                Vector2 p3 = way.GetChild(3).position;
+
+                float t = 0;
+                while (t < 1)
+                {
+                    t += Time.deltaTime / timeToMove;
+
+                    transform.position = Mathf.Pow(1 - t, 3) * p0 +
+                        3 * Mathf.Pow(1 - t, 2) * t * p1 +
+                        3 * (1 - t) * Mathf.Pow(t, 2) * p2 +
+                        Mathf.Pow(t, 3) * p3;
+
+                    transform.rotation = Quaternion.Lerp(way.GetChild(0).transform.rotation, way.GetChild(3).transform.rotation, t);
+
+                    yield return null;
+                }
             }
         }
 
