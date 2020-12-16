@@ -22,6 +22,7 @@ namespace LeRafiot
             [Header("Object attached")]
             public GameObject attachedTo;
             public Animator playerAnimator;
+            public Animator pirateAnimator;
             private int spriteNumber;
 
             //Rope settings
@@ -53,7 +54,7 @@ namespace LeRafiot
             {
                 rope.SetPosition(1, attachedTo.transform.localPosition);                                //The rope is always attach to the chest
 
-                if (rope.GetPosition(1).y > 0)
+                if (rope.GetPosition(1).y > 0.5)
                 {
                     if ((Input.GetButtonDown("A_Button") || Input.GetKeyDown(KeyCode.Space)) && !Manager.Instance.panel.activeSelf)
                     {
@@ -70,6 +71,7 @@ namespace LeRafiot
                         win = true;
                         rope.SetPosition(1, new Vector3(0, 0));
                         Manager.Instance.Result(true);
+                        pirateAnimator.SetTrigger("Win");
                         loseScript.buttonAnimator.gameObject.SetActive(false);
                         SoundManager123Requin.Instance.sfxSound[0].Play();
                     }
