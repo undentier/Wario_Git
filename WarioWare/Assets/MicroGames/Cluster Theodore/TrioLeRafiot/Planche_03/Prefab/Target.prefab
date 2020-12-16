@@ -98,13 +98,14 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
-  enemy: {fileID: 0}
-  tickEnemyToTravel: 0
+  enemy: {fileID: 4933939287867118448, guid: b41e7ec329624ac4d8dc0420a9f2b12a, type: 3}
+  tickEnemyToTravel: 1
   way: {fileID: 0}
   tickToIncrase: 1
   startScale: {x: 0, y: 0}
   finalScale: {x: 1, y: 1}
   activate: 0
+  numberPicked: 0
 --- !u!1 &517964234196080497
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,13 +204,14 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
-  enemy: {fileID: 0}
-  tickEnemyToTravel: 0
+  enemy: {fileID: 1490455053491745176, guid: c5a931e46b73c724d8df4df876896240, type: 3}
+  tickEnemyToTravel: 2
   way: {fileID: 0}
   tickToIncrase: 1
   startScale: {x: 0, y: 0}
   finalScale: {x: 1, y: 1}
   activate: 0
+  numberPicked: 0
 --- !u!1 &517964234327978170
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +317,7 @@ MonoBehaviour:
   startScale: {x: 0, y: 0}
   finalScale: {x: 1, y: 1}
   activate: 0
+  numberPicked: 0
 --- !u!1 &517964234570559252
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,13 +416,14 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
-  enemy: {fileID: 0}
-  tickEnemyToTravel: 0
+  enemy: {fileID: 4054890444496201138, guid: a5d6c48dfe6a69342a2893bd1b3c0ebf, type: 3}
+  tickEnemyToTravel: 2
   way: {fileID: 0}
   tickToIncrase: 1
   startScale: {x: 0, y: 0}
   finalScale: {x: 1, y: 1}
   activate: 0
+  numberPicked: 0
 --- !u!1 &517964235011446460
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,13 +522,14 @@ MonoBehaviour:
   currentDifficulty: 0
   timer: 0
   currentTime: 0
-  enemy: {fileID: 0}
-  tickEnemyToTravel: 0
+  enemy: {fileID: 4933939287867118448, guid: b41e7ec329624ac4d8dc0420a9f2b12a, type: 3}
+  tickEnemyToTravel: 1
   way: {fileID: 0}
   tickToIncrase: 1
   startScale: {x: 0, y: 0}
   finalScale: {x: 1, y: 1}
   activate: 0
+  numberPicked: 0
 --- !u!1 &517964235206730929
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +575,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8141098439740901658}
   - component: {fileID: 392985576379018948}
+  - component: {fileID: 4555067699627350703}
+  - component: {fileID: 507533734911872165}
   m_Layer: 0
   m_Name: Middle target cercle
   m_TagString: Untagged
@@ -642,6 +649,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4555067699627350703
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502771139908081742}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!114 &507533734911872165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502771139908081742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd795067ef57f0643a52a7acff608fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInZone: 0
+  playerInZone: 0
 --- !u!1 &2314087081343009069
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +689,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3176389296092646545}
   - component: {fileID: 570864335620209647}
+  - component: {fileID: 4851041295248006251}
+  - component: {fileID: 7041935610662078077}
   m_Layer: 0
   m_Name: Middle right cercle
   m_TagString: Untagged
@@ -724,6 +763,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4851041295248006251
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2314087081343009069}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!114 &7041935610662078077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2314087081343009069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd795067ef57f0643a52a7acff608fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInZone: 0
+  playerInZone: 0
 --- !u!1 &4017813916780117520
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +803,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5864993813772524325}
   - component: {fileID: 684911361939720287}
+  - component: {fileID: 6045789164357484197}
+  - component: {fileID: 7367369631397731768}
   m_Layer: 0
   m_Name: Right target cercle
   m_TagString: Untagged
@@ -806,6 +877,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6045789164357484197
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017813916780117520}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!114 &7367369631397731768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017813916780117520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd795067ef57f0643a52a7acff608fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInZone: 0
+  playerInZone: 0
 --- !u!1 &6378756206431879813
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +917,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8066201135226306702}
   - component: {fileID: 6868494498833506014}
+  - component: {fileID: 7826229328928297214}
+  - component: {fileID: 4522038895567634444}
   m_Layer: 0
   m_Name: Left target cercle
   m_TagString: Untagged
@@ -888,6 +991,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7826229328928297214
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378756206431879813}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!114 &4522038895567634444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378756206431879813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd795067ef57f0643a52a7acff608fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInZone: 0
+  playerInZone: 0
 --- !u!1 &8306499356896766531
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +1031,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9122353820220689958}
   - component: {fileID: 6793283739741371304}
+  - component: {fileID: 6530849197222607683}
+  - component: {fileID: 3526593516513217002}
   m_Layer: 0
   m_Name: Middle left target cercle
   m_TagString: Untagged
@@ -970,3 +1105,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6530849197222607683
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8306499356896766531}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!114 &3526593516513217002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8306499356896766531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd795067ef57f0643a52a7acff608fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInZone: 0
+  playerInZone: 0

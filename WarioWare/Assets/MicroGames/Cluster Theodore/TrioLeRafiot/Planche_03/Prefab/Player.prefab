@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 1396955539778056863}
   - component: {fileID: 1396955539778056848}
   - component: {fileID: 1396955539778056862}
-  - component: {fileID: 4264464860005665729}
   - component: {fileID: 1396955539778056860}
   - component: {fileID: 1429861296578928284}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,18 +104,6 @@ MonoBehaviour:
   - {fileID: 0}
   playerState: 0
   canMove: 1
---- !u!114 &4264464860005665729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396955539778056849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd795067ef57f0643a52a7acff608fae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1396955539778056860
 Rigidbody2D:
   serializedVersion: 4
@@ -148,9 +135,9 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16083047, y: 8.499722}
-  m_Size: {x: 2.9922807, y: 2.9931426}
+  m_Offset: {x: -0.18523358, y: 8.6317005}
+  m_Size: {x: 3.0410204, y: 4.52578}
   m_Direction: 0

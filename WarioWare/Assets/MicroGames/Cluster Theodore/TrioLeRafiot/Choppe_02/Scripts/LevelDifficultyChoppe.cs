@@ -10,7 +10,7 @@ namespace LeRafiot
         /// <summary>
         /// Antoine LEROUX
         /// This script is use to manage the difficulty depending to the level (1,2,3) 
-        /// All gameplay values changing need to be refer in this scrip
+        /// All gameplay values changing need to be refer in this script
         /// </summary>
 
         public class LevelDifficultyChoppe : TimedBehaviour

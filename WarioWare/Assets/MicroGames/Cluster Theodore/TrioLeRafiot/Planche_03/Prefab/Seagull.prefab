@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5012608456047524942}
   - component: {fileID: 6655091618328287091}
+  - component: {fileID: 2001429709195524767}
   - component: {fileID: 3331062749566224826}
   m_Layer: 0
   m_Name: Seagull
@@ -82,6 +83,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2001429709195524767
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490455053491745176}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &3331062749566224826
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -107,19 +129,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 3.5144386, y: -0.3822909}
-      - {x: 2.3022165, y: -0.25054154}
-      - {x: 1.8419156, y: -0.59627473}
-      - {x: 3.1277115, y: -0.67933834}
-      - {x: 3.5105314, y: -0.9448226}
-      - {x: 2.503204, y: -0.9736301}
-      - {x: 1.6883956, y: -0.7064087}
-      - {x: 1.3151664, y: -0.9536291}
-      - {x: 1.7797067, y: -1.358161}
-      - {x: 2.5499008, y: -1.2740043}
-      - {x: 2.4545689, y: -1.6306399}
-      - {x: 1.9825841, y: -1.6415765}
-      - {x: 1.1036683, y: -1.0605371}
+    - - {x: 1.1036683, y: -1.0605371}
       - {x: 0.056111254, y: -1.3192728}
       - {x: -1.1428869, y: -1.4260983}
       - {x: -1.6380864, y: -1.2658046}
@@ -149,8 +159,5 @@ PolygonCollider2D:
       - {x: 2.8924742, y: 2.026046}
       - {x: 1.4075264, y: 1.729833}
       - {x: 1.07358, y: 0.33381796}
-      - {x: 1.8460451, y: 0.009789526}
-      - {x: 2.7028596, y: 0.2679756}
-      - {x: 3.61907, y: 1.0084205}
-      - {x: 3.8407662, y: 0.24401462}
-      - {x: 3.7253866, y: -0.25878918}
+      - {x: 1.5681792, y: 0.12816608}
+      - {x: 1.5353614, y: -0.8233807}

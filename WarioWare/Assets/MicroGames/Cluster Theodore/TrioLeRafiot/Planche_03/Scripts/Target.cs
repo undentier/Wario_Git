@@ -32,7 +32,9 @@ namespace LeRafiot
             [Header ("Start bool")]
             public bool activate;
 
-            private bool coolDown;       
+            private bool coolDown;
+
+            [HideInInspector] public int numberPicked;
             #endregion
 
             public override void Start()
@@ -75,9 +77,9 @@ namespace LeRafiot
                 coolDown = false;
                 transform.localScale = startScale;
 
-                RandomEnemySpawn.Instance.target.Add(gameObject);
+                RandomEnemySpawn.Instance.numberToChose.Add(numberPicked);
 
-                if(enemy != null)
+                if (enemy != null)
                 {
                     actualEnemy = Instantiate(enemy, way.GetChild(0).transform.position, way.GetChild(0).transform.rotation);
                     StartCoroutine(MoveToPositioninCurve(actualEnemy.transform, (tickEnemyToTravel * (60 / bpm))));

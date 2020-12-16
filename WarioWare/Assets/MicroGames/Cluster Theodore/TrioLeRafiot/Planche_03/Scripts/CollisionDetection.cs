@@ -15,13 +15,49 @@ namespace LeRafiot
 
         public class CollisionDetection : MonoBehaviour
         {
-            private void OnTriggerEnter2D(Collider2D collision)
+            public bool enemyInZone;
+            public bool playerInZone;
+
+            private void Start()
             {
-                if (collision.gameObject.tag == ("Ennemy1") && !Manager.Instance.panel.activeSelf)
+                enemyInZone = false;
+                playerInZone = false;
+
+            }
+
+            private void Update()
+            {
+                if(playerInZone && enemyInZone && !Manager.Instance.panel.activeSelf)
                 {
                     PlayerController.Instance.canMove = false;
                     Manager.Instance.Result(false);
                     SoundManagerPlanche.Instance.sfxSound[1].Play();
+                }
+            }
+
+            private void OnTriggerEnter2D(Collider2D collision)
+            {
+                if (collision.gameObject.tag == ("Ennemy1"))
+                {
+                    enemyInZone = true;
+                }
+
+                if (collision.gameObject.tag == ("Player"))
+                {
+                    playerInZone = true;
+                }
+            }
+
+            private void OnTriggerExit2D(Collider2D collision)
+            {
+                if (collision.gameObject.tag == ("Ennemy1"))
+                {
+                    enemyInZone = false;
+                }
+
+                if (collision.gameObject.tag == ("Player"))
+                {
+                    playerInZone = false;
                 }
             }
         }

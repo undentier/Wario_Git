@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7600573466744006756}
   - component: {fileID: 8120367296079119193}
+  - component: {fileID: 669340723405629061}
   - component: {fileID: 202866996418944400}
   m_Layer: 0
   m_Name: Shark
@@ -82,6 +83,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &669340723405629061
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054890444496201138}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &202866996418944400
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -128,18 +150,8 @@ PolygonCollider2D:
       - {x: 3.9828575, y: -13.84944}
       - {x: 2.2593791, y: -6.4298124}
       - {x: 7.9367228, y: -4.7443495}
-      - {x: 14.462633, y: -0.4700023}
-      - {x: 17.590092, y: -4.288602}
-      - {x: 19.442078, y: -5.320624}
-      - {x: 21.182375, y: -5.5046587}
-      - {x: 20.185345, y: -3.7355173}
-      - {x: 19.650326, y: 0.8433111}
-      - {x: 18.178404, y: 1.8948818}
-      - {x: 19.875124, y: 3.2289493}
-      - {x: 20.782389, y: 8.099287}
-      - {x: 22.420982, y: 11.801709}
-      - {x: 17.165676, y: 9.779698}
-      - {x: 14.427945, y: 3.2144985}
+      - {x: 14.449944, y: -0.42679673}
+      - {x: 14.341473, y: 3.1280267}
       - {x: 9.029595, y: 3.6933656}
       - {x: 4.464584, y: 5.334241}
       - {x: 4.835335, y: 9.690561}
