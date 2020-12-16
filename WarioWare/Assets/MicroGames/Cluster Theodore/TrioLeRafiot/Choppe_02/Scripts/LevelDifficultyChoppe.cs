@@ -20,15 +20,18 @@ namespace LeRafiot
 
             [Header("Level EASY")]
             public List<GameObject> drinkListEasy = new List<GameObject>();
+            public GameObject backgroundEasy;
 
 
             [Header("Level MEDIUM")]
             public List<GameObject> drinkListMedium = new List<GameObject>();
+            public GameObject backgroundMedium;
 
 
             [Header("Level HARD")]
             public int tickBubbleDisappear;
             public List<GameObject> drinkListHard = new List<GameObject>();
+            public GameObject backgroundHard;
 
             #endregion
 
@@ -58,17 +61,26 @@ namespace LeRafiot
                 {
                     managerScript.drinkList = new List<GameObject>(drinkListEasy);
                     managerScript.vanishUi = false;
+                    backgroundEasy.SetActive(true);
+                    backgroundMedium.SetActive(false);
+                    backgroundHard.SetActive(false);
                 }
                 else if (Manager.Instance.currentDifficulty == Difficulty.MEDIUM)
                 {
                     managerScript.drinkList = new List<GameObject>(drinkListMedium);
                     managerScript.vanishUi = false;
+                    backgroundEasy.SetActive(false);
+                    backgroundMedium.SetActive(true);
+                    backgroundHard.SetActive(false);
                 }
                 else if (Manager.Instance.currentDifficulty == Difficulty.HARD)
                 {
                     managerScript.drinkList = new List<GameObject>(drinkListHard);
                     managerScript.tickToFade = tickBubbleDisappear;
                     managerScript.vanishUi = true;
+                    backgroundEasy.SetActive(false);
+                    backgroundMedium.SetActive(false);
+                    backgroundHard.SetActive(true);
                 }
             }
         }

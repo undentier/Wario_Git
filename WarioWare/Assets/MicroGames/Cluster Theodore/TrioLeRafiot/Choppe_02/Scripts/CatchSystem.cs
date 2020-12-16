@@ -21,6 +21,11 @@ namespace LeRafiot
 			private bool drinkInZone;
 			private GameObject drinkTriggered;
             public bool goodDrink;
+
+            [Header("Arms")]
+            public GameObject armDown;
+            public GameObject armUp;
+
 			#endregion
 
 			// Start is called before the first frame update
@@ -28,7 +33,10 @@ namespace LeRafiot
 			{
 				colorBase = GetComponent<SpriteRenderer>().color;
 				drinkInZone = false;
-			}
+
+                armDown.SetActive(true);
+                armUp.SetActive(false);
+            }
 
 			// Update is called once per frame
 			void Update()
@@ -39,6 +47,9 @@ namespace LeRafiot
 					
 					if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A_Button") && !Manager.Instance.panel.activeSelf)
                     {
+                        armDown.SetActive(false);
+                        armUp.SetActive(true);
+
                         if (goodDrink)
                         {
                             DrinkManager.Instance.canSpawn = false;

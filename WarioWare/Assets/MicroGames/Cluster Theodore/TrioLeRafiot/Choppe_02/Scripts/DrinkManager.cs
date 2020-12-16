@@ -108,9 +108,9 @@ namespace LeRafiot
                         {
                             int randomNumber = Random.Range(1, drinkList.Count);
 
-                            spawnDrink = Instantiate(drinkList[randomNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
+                            spawnDrink = Instantiate(drinkList[randomNumber], new Vector2(spawnPoint.transform.position.x, drinkList[randomNumber].transform.position.y), spawnPoint.transform.rotation);
                             SoundManagerChoppe.Instance.sfxSound[3].Play();
-                            StartCoroutine(MoveToPosition(spawnDrink.transform, endPoint.transform.position, (tickDrinkStay * (60 / bpm))));
+                            StartCoroutine(MoveToPosition(spawnDrink.transform, new Vector2(endPoint.transform.position.x, drinkList[randomNumber].transform.position.y), (tickDrinkStay * (60 / bpm))));
                             actualDrink.Add(spawnDrink);
 
                             rateStock += chanceAdd;
@@ -118,9 +118,9 @@ namespace LeRafiot
                         }
                         else
                         {
-                            spawnDrink = Instantiate(chosenOne, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                            spawnDrink = Instantiate(chosenOne, new Vector2(spawnPoint.transform.position.x, chosenOne.transform.position.y), spawnPoint.transform.rotation);
                             SoundManagerChoppe.Instance.sfxSound[3].Play();
-                            StartCoroutine(MoveToPosition(spawnDrink.transform, endPoint.transform.position, (tickDrinkStay * (60 / bpm))));
+                            StartCoroutine(MoveToPosition(spawnDrink.transform, new Vector2(endPoint.transform.position.x, chosenOne.transform.position.y), (tickDrinkStay * (60 / bpm))));
                             actualDrink.Add(spawnDrink);
                             spawnDrink.tag = "Ennemy2";
 
