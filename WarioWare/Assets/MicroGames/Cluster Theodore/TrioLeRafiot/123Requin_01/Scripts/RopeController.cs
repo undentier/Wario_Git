@@ -25,6 +25,10 @@ namespace LeRafiot
             public Animator pirateAnimator;
             private int spriteNumber;
 
+            [Header("Cam")]
+            public GameObject camPlayer;
+            public GameObject camBoat;
+
             //Rope settings
             [HideInInspector] public int ropeSize;
             [HideInInspector] public int pullingUpRopeSize;
@@ -32,6 +36,8 @@ namespace LeRafiot
             //Level 3 parameters
             [HideInInspector] public bool level3;
             [HideInInspector] public int pullingDownRopeSize = 1;
+
+            private int countAnim;
 
             #endregion
 
@@ -41,6 +47,11 @@ namespace LeRafiot
                 rope = GetComponent<LineRenderer>();
                 loseScript = GetComponent<LoseConditions>();
                 spriteNumber = 1;
+                countAnim = 1;
+                
+                playerAnimator.gameObject.SetActive(true);
+                camPlayer.SetActive(true);
+                camBoat.SetActive(false);
             }
 
             //FixedUpdate is called on a fixed time.
@@ -71,7 +82,9 @@ namespace LeRafiot
                         win = true;
                         rope.SetPosition(1, new Vector3(0, 0));
                         Manager.Instance.Result(true);
-                        pirateAnimator.SetTrigger("Win");
+                        playerAnimator.gameObject.SetActive(false);
+                        camPlayer.SetActive(false);
+                        camBoat.SetActive(true);
                         loseScript.buttonAnimator.gameObject.SetActive(false);
                         SoundManager123Requin.Instance.sfxSound[0].Play();
                     }
@@ -81,6 +94,23 @@ namespace LeRafiot
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
+                if (win)                                                                        //animation update with ticks
+                {
+                    countAnim++;
+
+                    if (countAnim == 2)
+                    {
+                        pirateAnimator.SetTrigger("IdleWin");
+                    }
+                    else if (countAnim == 3)
+                    {
+                        pirateAnimator.SetTrigger("Win");
+
+                        countAnim = 1;
+                    }
+
+                }
+
                 if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("PlayerPullUp") && !Manager.Instance.panel.activeSelf)
                 {
                     spriteNumber++;
