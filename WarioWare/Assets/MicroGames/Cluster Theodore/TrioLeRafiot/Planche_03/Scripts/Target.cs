@@ -103,7 +103,7 @@ namespace LeRafiot
                         3 * (1 - t) * Mathf.Pow(t, 2) * p2 +
                         Mathf.Pow(t, 3) * p3;
 
-                    transform.rotation = Quaternion.Lerp(way.GetChild(0).transform.rotation, way.GetChild(3).transform.rotation, t);
+                    //transform.rotation = Quaternion.Lerp(way.GetChild(0).transform.rotation, way.GetChild(3).transform.rotation, t);
 
                     yield return null;
                 }
