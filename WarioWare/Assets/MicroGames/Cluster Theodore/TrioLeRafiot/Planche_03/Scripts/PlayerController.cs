@@ -70,6 +70,7 @@ namespace LeRafiot
                         {
                             canMove = false;
                             Manager.Instance.Result(false);
+                            SoundManagerPlanche.Instance.sfxSound[4].Play();
                             SoundManagerPlanche.Instance.sfxSound[1].Play();
                         }
                     }
@@ -86,6 +87,7 @@ namespace LeRafiot
                         {
                             canMove = false;
                             Manager.Instance.Result(false);
+                            SoundManagerPlanche.Instance.sfxSound[4].Play();
                             SoundManagerPlanche.Instance.sfxSound[1].Play();
                         }
                     }
