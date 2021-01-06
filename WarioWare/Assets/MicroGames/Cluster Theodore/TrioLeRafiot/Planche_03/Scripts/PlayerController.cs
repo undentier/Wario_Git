@@ -19,10 +19,10 @@ namespace LeRafiot
             #region Variable
 
             [Header ("Rotation point")]
-            public Transform[] rotaPoint;
+            public Sprite[] sprites;
 
             [Header ("Player value")]
-            public int playerState;
+            public int playerSprite;
             public bool canMove;
 
             #endregion 
@@ -32,13 +32,15 @@ namespace LeRafiot
                 ManagerInit();
 
                 canMove = true;
-                playerState = 2;
+                playerSprite = 2;
             }
 
     
             void Update()
             {
                 PlayerMouvement();
+
+                TriggerBoxPosition();
             }
 
 
@@ -61,10 +63,10 @@ namespace LeRafiot
                     if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("Right_Bumper"))
                     {
 
-                        if (playerState < 4)
+                        if (playerSprite < 4)
                         {
-                            gameObject.transform.rotation = rotaPoint[playerState + 1].transform.rotation;
-                            playerState++;
+                            gameObject.GetComponentInChildren<SpriteRenderer>().sprite = sprites[playerSprite + 1];
+                            playerSprite++;
                         }
                         else
                         {
@@ -77,10 +79,10 @@ namespace LeRafiot
                     if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("Left_Bumper"))
                     {
 
-                        if (playerState > 0)
+                        if (playerSprite > 0)
                         {
-                            gameObject.transform.rotation = rotaPoint[playerState - 1].transform.rotation;
-                            playerState--;
+                            gameObject.GetComponentInChildren<SpriteRenderer>().sprite = sprites[playerSprite - 1];
+                            playerSprite--;
                         }
                         else
                         {
@@ -92,6 +94,29 @@ namespace LeRafiot
                 }
             }
 
+            void TriggerBoxPosition()
+            {
+                if (playerSprite == 0) //left 2
+                {
+                    gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(-8.56f, 3.65f);
+                }
+                else if (playerSprite == 1) //left 1
+                {
+                    gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(-6.53f, 8.22f);
+                }
+                else if (playerSprite == 2) //mid
+                {
+                    gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.5198772f, 11.45f);
+                }
+                else if (playerSprite == 3) //right 1
+                {
+                    gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(7.17f, 8.22f);
+                }
+                else if (playerSprite == 4) //right 2
+                {
+                    gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(9.48f, 3.65f);
+                }
+            }
         }
     }
 }
