@@ -14,6 +14,13 @@ namespace LeRafiot
 
         public class Target : TimedBehaviour
         {
+            public enum wichEnemy
+            {
+                seagull,
+                canonBall,
+                shark,
+            }
+
             #region Variable
             [Header("Enemy")]
             public GameObject enemy;
@@ -31,6 +38,8 @@ namespace LeRafiot
 
             [Header ("Start bool")]
             public bool activate;
+
+            public wichEnemy enemyChosen;
 
             private bool coolDown;
 
@@ -83,6 +92,21 @@ namespace LeRafiot
                 {
                     actualEnemy = Instantiate(enemy, way.GetChild(0).transform.position, way.GetChild(0).transform.rotation);
                     StartCoroutine(MoveToPositioninCurve(actualEnemy.transform, (tickEnemyToTravel * (60 / bpm))));
+
+                    switch (enemyChosen)
+                    {
+                        case wichEnemy.seagull:
+                            SoundManagerPlanche.Instance.sfxSound[2].Play();
+                            break;
+                        case wichEnemy.canonBall:
+                            SoundManagerPlanche.Instance.sfxSound[3].Play();
+                            break;
+                        case wichEnemy.shark:
+                            SoundManagerPlanche.Instance.sfxSound[4].Play();
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
 

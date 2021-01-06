@@ -25,6 +25,8 @@ namespace LeRafiot
                 base.Start();
                 ManagerInit();
 
+                sfxSound[5].Play();
+
                 switch (bpm)
                 {
                     case (float)BPM.Slow:
