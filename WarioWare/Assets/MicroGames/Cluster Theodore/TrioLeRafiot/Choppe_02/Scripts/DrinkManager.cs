@@ -122,7 +122,7 @@ namespace LeRafiot
                             SoundManagerChoppe.Instance.sfxSound[3].Play();
                             StartCoroutine(MoveToPosition(spawnDrink.transform, new Vector2(endPoint.transform.position.x, chosenOne.transform.position.y), (tickDrinkStay * (60 / bpm))));
                             actualDrink.Add(spawnDrink);
-                            spawnDrink.tag = "Ennemy2";
+                            spawnDrink.tag = "Enemy2";
 
                             rateStock = 0;
                             numberOfSpawn++;
