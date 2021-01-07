@@ -84,14 +84,14 @@ namespace LeRafiot
 
             private void OnTriggerEnter2D(Collider2D col)
             {
-                if (col.CompareTag("Ennemy2"))
+                if (col.CompareTag("Enemy2"))
                 {
                     goodDrink = true;
                     drinkTriggered = col.gameObject;
                     drinkInZone = true;
                 }
 
-                if (col.CompareTag("Ennemy1"))
+                if (col.CompareTag("Enemy1"))
                 {
                     drinkInZone = true;
                     drinkTriggered = col.gameObject;
@@ -100,12 +100,12 @@ namespace LeRafiot
 
             private void OnTriggerExit2D(Collider2D col)
             {
-                if (col.CompareTag("Ennemy1"))
+                if (col.CompareTag("Enemy1"))
                 {
 					drinkInZone = false;					
 				}
 
-                if (col.CompareTag("Ennemy2"))
+                if (col.CompareTag("Enemy2"))
                 {
                     goodDrink = false;
                 }
