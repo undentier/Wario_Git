@@ -88,6 +88,7 @@ namespace LeRafiot
 
                 RandomEnemySpawn.Instance.numberToChose.Add(numberPicked);
 
+
                 if (enemy != null)
                 {
                     actualEnemy = Instantiate(enemy, way.GetChild(0).transform.position, way.GetChild(0).transform.rotation);
