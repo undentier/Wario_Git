@@ -30,8 +30,14 @@ namespace LeRafiot
                     case (float)BPM.Slow:
                         globalMusic[0].Play();
                         break;
+                    case (float)BPM.Medium:
+                        //globalMusic[1].Play();
+                        break;
+                    case (float)BPM.Fast:
+                        //globalMusic[2].Play();
+                        break;
                     case (float)BPM.SuperFast:
-                        globalMusic[1].Play();
+                        globalMusic[3].Play();
                         break;
                     default:
                         break;
