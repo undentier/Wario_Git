@@ -65,7 +65,7 @@ namespace LeRafiot
                     }
                     else
                     {
-                        //Do nothing
+                        PickRandomNumber(4);
                     }
                 }
             }
