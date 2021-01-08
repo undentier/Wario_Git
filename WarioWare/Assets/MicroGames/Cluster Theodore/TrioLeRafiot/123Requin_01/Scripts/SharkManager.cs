@@ -30,6 +30,9 @@ namespace LeRafiot
 
             [Header ("UI")]
             public Image sign;
+            public Vector2 startScale;
+            public Vector2 endScale;
+
 
             private GameObject actualShark;
 
@@ -51,7 +54,12 @@ namespace LeRafiot
                 
                 counterTick = 0;
                 counterTickShark = 0;
+
+                sign.gameObject.transform.localScale = startScale;
+
+                
             }
+
 
             //FixedUpdate is called on a fixed time.
             public override void FixedUpdate()
@@ -71,12 +79,14 @@ namespace LeRafiot
             {              
                 if (counterTick > 0 && counterTick != tickBeforeSpawn)                  //For 2 flashs
                 {
+                    
+
                     if (timer >= 60 / bpm)
                     {
                         if (canFlash)
                         {
                             SoundManager123Requin.Instance.sfxSound[3].Play();
-                            sign.gameObject.SetActive(true);
+                            //sign.gameObject.SetActive(true);
                             canFlash = false;
                         }
                     }
@@ -84,7 +94,7 @@ namespace LeRafiot
                     {
                         if (!canFlash)
                         {
-                            sign.gameObject.SetActive(false);
+                            //sign.gameObject.SetActive(false);
                             canFlash = true;
                         }
                     }
@@ -98,6 +108,8 @@ namespace LeRafiot
                     if (Tick == startTick)
                     {
                         canFlash = true;
+                        StartCoroutine(IncreaseScale(startScale, endScale, (tickBeforeSpawn * (60 / bpm))));
+                        Debug.LogWarning("je rentre");
                     }
 
                     if (Tick >= startTick && counterTick != tickBeforeSpawn)
@@ -154,7 +166,22 @@ namespace LeRafiot
                     yield return null;
                 }
             }
+
+
+            public IEnumerator IncreaseScale(Vector2 scale, Vector2 endScale, float timeToFade)
+            {
+                Vector2 currentScale = scale;
+                float t = 0;
+                while (t < 1)
+                {
+                    t += Time.deltaTime / timeToFade;
+                    transform.localScale = Vector3.Lerp(currentScale, endScale, t);
+                    yield return null;
+                }
+                sign.gameObject.transform.localScale = startScale;
+            }
             
+
         }
     }
 }
