@@ -12,7 +12,7 @@ namespace LeRafiot
         /// This script control the player
         /// </summary>
 
-        public class PlayerController : MonoBehaviour
+        public class PlayerController : TimedBehaviour
         {
             public static PlayerController Instance;
 
@@ -25,17 +25,33 @@ namespace LeRafiot
             public int playerSprite;
             public bool canMove;
 
+            private bool playerDrowned;
+
             #endregion 
 
-            void Start()
+            public override void Start()
             {
+                base.Start();
+
                 ManagerInit();
 
                 canMove = true;
                 playerSprite = 2;
             }
 
-    
+            public override void FixedUpdate()
+            {
+                base.FixedUpdate();
+            }
+
+            public override void TimedUpdate()
+            {
+                if (Tick == 8 && !Manager.Instance.panel.activeSelf && playerDrowned)
+                {
+                    Manager.Instance.Result(false);
+                }
+            }
+
             void Update()
             {
                 PlayerMouvement();
@@ -70,10 +86,15 @@ namespace LeRafiot
                         }
                         else
                         {
-                            canMove = false;
-                            Manager.Instance.Result(false);
-                            SoundManagerPlanche.Instance.sfxSound[1].Play();
-                            SoundManagerPlanche.Instance.sfxSound[4].Play();
+                            if(!Manager.Instance.panel.activeSelf)
+                            {
+                                playerDrowned = true;
+                                RandomEnemySpawn.Instance.spawnDisabled = true;
+                                canMove = false;
+                                //Manager.Instance.Result(false);
+                                SoundManagerPlanche.Instance.sfxSound[1].Play();
+                                SoundManagerPlanche.Instance.sfxSound[4].Play();
+                            }
                         }
                     }
 
@@ -87,10 +108,15 @@ namespace LeRafiot
                         }
                         else
                         {
-                            canMove = false;
-                            Manager.Instance.Result(false);
-                            SoundManagerPlanche.Instance.sfxSound[1].Play();
-                            SoundManagerPlanche.Instance.sfxSound[4].Play();
+                            if (!Manager.Instance.panel.activeSelf)
+                            {
+                                playerDrowned = true;
+                                RandomEnemySpawn.Instance.spawnDisabled = true;
+                                canMove = false;
+                                //Manager.Instance.Result(false);
+                                SoundManagerPlanche.Instance.sfxSound[1].Play();
+                                SoundManagerPlanche.Instance.sfxSound[4].Play();
+                            }
                         }
                     }
                 }

@@ -475,6 +475,7 @@ MonoBehaviour:
   bpmText: {fileID: 340798899}
   timerUI: {fileID: 550391381}
   tickNumber: {fileID: 1661562997}
+  catchScript: {fileID: 858517874}
 --- !u!4 &303955767
 Transform:
   m_ObjectHideFlags: 0
@@ -1277,6 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4882f555669eb524ca5b6521cb6ff6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catchScript: {fileID: 858517874}
 --- !u!61 &600790093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1735,10 +1737,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f82458cc2ed92f4ca21ce1156ac4d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bpm: 60
+  currentDifficulty: 0
+  timer: 0
+  currentTime: 0
   colorTriggered: {r: 0.39215687, g: 0, b: 0, a: 0.39215687}
   goodDrink: 0
   armDown: {fileID: 1559527589}
   armUp: {fileID: 564858684}
+  canCatch: 1
+  catchedGoodDrink: 0
 --- !u!61 &858517875
 BoxCollider2D:
   m_ObjectHideFlags: 0

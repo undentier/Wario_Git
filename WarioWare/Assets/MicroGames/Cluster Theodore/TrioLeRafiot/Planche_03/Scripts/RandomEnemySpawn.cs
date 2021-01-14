@@ -26,6 +26,8 @@ namespace LeRafiot
 
             [Header("Random Number")]
             public List<int> numberToChose = new List<int>(new int[]{0,1,2,3,4});
+
+            [HideInInspector] public bool spawnDisabled;
             #endregion
 
 
@@ -45,7 +47,7 @@ namespace LeRafiot
             //TimedUpdate is called once every tick.
             public override void TimedUpdate()
             {
-                if (!Manager.Instance.panel.activeSelf)
+                if (!Manager.Instance.panel.activeSelf && !spawnDisabled)
                 {
                     if (numberToChose.Count >= numberRandomSpawn)
                     {
