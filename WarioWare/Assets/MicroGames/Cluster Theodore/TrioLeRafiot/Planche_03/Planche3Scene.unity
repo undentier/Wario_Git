@@ -2121,6 +2121,7 @@ MonoBehaviour:
   - {fileID: 87106393}
   - {fileID: 408232305}
   numberToChose: 0000000001000000020000000300000004000000
+  spawnDisabled: 0
 --- !u!1 &1070584522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,12 +2174,12 @@ MonoBehaviour:
   sharkTravelInTickEasy: 2
   canonBallTravelInTickEasy: 1
   seagullTravelInTickEasy: 2
-  numberEnemyPerTickMedium: 2
+  numberEnemyPerTickMedium: 1
   alertIncreaseInTickMedium: 1
   sharkTravelInTickMedium: 2
   canonBallTravelInTickMedium: 1
   seagullTravelInTickMedium: 2
-  numberEnemyPerTickHard: 3
+  numberEnemyPerTickHard: 2
   alertIncreaseInTickHard: 1
   sharkTravelInTickHard: 2
   canonBallTravelInTickHard: 1

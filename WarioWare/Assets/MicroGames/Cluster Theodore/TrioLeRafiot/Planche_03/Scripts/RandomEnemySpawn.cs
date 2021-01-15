@@ -28,6 +28,7 @@ namespace LeRafiot
             public List<int> numberToChose = new List<int>(new int[]{0,1,2,3,4});
 
             [HideInInspector] public bool spawnDisabled;
+            private bool startSpawn;
             #endregion
 
 
@@ -49,25 +50,33 @@ namespace LeRafiot
             {
                 if (!Manager.Instance.panel.activeSelf && !spawnDisabled)
                 {
-                    if (numberToChose.Count >= numberRandomSpawn)
+                  
+                    if (numberToChose.Count >= numberRandomSpawn && startSpawn)
                     {
                         PickRandomNumber(0);
                     }
-                    else if (numberToChose.Count >= numberRandomSpawn - 1)
+                    else if (numberToChose.Count >= numberRandomSpawn - 1 && startSpawn)
                     {
                         PickRandomNumber(1);
                     }
-                    else if (numberToChose.Count >= numberRandomSpawn - 2)
+                    else if (numberToChose.Count >= numberRandomSpawn - 2 && startSpawn)
                     {
                         PickRandomNumber(2);
                     }
-                    else if (numberToChose.Count >= numberRandomSpawn - 3)
+                    else if (numberToChose.Count >= numberRandomSpawn - 3 && startSpawn)
                     {
                         PickRandomNumber(3);
                     }
-                    else
+                    else if (startSpawn)
                     {
                         PickRandomNumber(4);
+                    }
+
+                    if (startSpawn == false)
+                    {
+                        startSpawn = true;
+                        target[2].GetComponent<Target>().numberPicked = 2;
+                        target[2].GetComponent<Target>().activate = true;
                     }
                 }
             }
