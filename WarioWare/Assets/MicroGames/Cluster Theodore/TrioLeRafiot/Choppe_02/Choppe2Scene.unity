@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 206084330}
   - component: {fileID: 206084331}
   m_Layer: 0
-  m_Name: Sound_90BPM
+  m_Name: Sound_80BPM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,7 +351,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2305867365394427769, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f7262070f61b21e48a8e0f7de6ac12f2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c72668f5ae3752f4ab9c4a71f85373f5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -489,6 +489,7 @@ Transform:
   m_Children:
   - {fileID: 537561244}
   - {fileID: 2065227617}
+  - {fileID: 1147909577}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -520,7 +521,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2305867365394427769, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: bc830f49a6f298a47a75239684082200, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 382616d7713d0e549b7c2606433781b5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -2392,13 +2393,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147909575}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.69, y: 3.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2103737446}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 303955767}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1227736854
 GameObject:
@@ -2632,7 +2633,7 @@ GameObject:
   - component: {fileID: 1305484613}
   - component: {fileID: 1305484614}
   m_Layer: 0
-  m_Name: Sound_120BPM
+  m_Name: Sound_100BPM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2663,7 +2664,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2305867365394427769, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c7182da37cad7ab4a97e62bc6ed2c2fd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2e98f7bd3c4d5b5498ac16f29b4d0079, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -2996,7 +2997,7 @@ GameObject:
   - component: {fileID: 1619001015}
   - component: {fileID: 1619001014}
   m_Layer: 0
-  m_Name: Sound_140BPM
+  m_Name: Sound_120BPM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3013,7 +3014,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2305867365394427769, guid: 15eeeb1c55e03df4b9b37c6dcc91ae41,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c9b8301210094f94aa0f90b8959306e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11e22f442ad18d845a22381c10dd2619, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
