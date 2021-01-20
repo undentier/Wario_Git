@@ -22,6 +22,9 @@ namespace LeRafiot
 			private GameObject drinkTriggered;
             public bool goodDrink;
 
+            public Transform drinkCatch;
+            private GameObject drinkInHand;
+
             [Header("Arms")]
             public GameObject armDown;
             public GameObject armUp;
@@ -81,7 +84,11 @@ namespace LeRafiot
                                 catchedGoodDrink = true;
                                 canCatch = false;
                                 DrinkManager.Instance.canSpawn = false;
+                                
+                                drinkInHand = Instantiate(drinkTriggered, drinkCatch);
+                                drinkInHand.GetComponent<BoxCollider2D>().enabled = false;
                                 Destroy(drinkTriggered);
+
                                 //Manager.Instance.Result(true);
                                 SoundManagerChoppe.Instance.sfxSound[4].Play();
                                 SoundManagerChoppe.Instance.sfxSound[0].Play();
