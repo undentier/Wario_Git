@@ -18,7 +18,7 @@ namespace LeRafiot
             public bool enemyInZone;
             public bool playerInZone;
 
-            private bool playerTouched;
+            //[HideInInspector] public bool playerTouched;
 
             public override void Start()
             {
@@ -35,7 +35,7 @@ namespace LeRafiot
 
             public override void TimedUpdate()
             {
-                if (Tick == 8 && !Manager.Instance.panel.activeSelf && playerTouched)
+                if (Tick == 8 && !Manager.Instance.panel.activeSelf && PlayerController.Instance.playerTouched)
                 {
                     Manager.Instance.Result(false);
                 }
@@ -43,9 +43,9 @@ namespace LeRafiot
 
             private void Update()
             {
-                if(playerInZone && enemyInZone && !Manager.Instance.panel.activeSelf && !playerTouched)
+                if(playerInZone && enemyInZone && !Manager.Instance.panel.activeSelf && !PlayerController.Instance.playerTouched)
                 {
-                    playerTouched = true;
+                    PlayerController.Instance.playerTouched = true;
                     RandomEnemySpawn.Instance.spawnDisabled = true;
 
                     PlayerController.Instance.canMove = false;

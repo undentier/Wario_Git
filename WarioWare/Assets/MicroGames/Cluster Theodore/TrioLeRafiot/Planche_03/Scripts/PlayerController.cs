@@ -25,7 +25,8 @@ namespace LeRafiot
             public int playerSprite;
             public bool canMove;
 
-            private bool playerDrowned;
+            [HideInInspector] public bool playerDrowned;
+            [HideInInspector] public bool playerTouched;
 
             #endregion 
 

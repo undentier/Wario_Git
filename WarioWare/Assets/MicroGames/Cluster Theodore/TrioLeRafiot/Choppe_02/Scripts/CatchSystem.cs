@@ -31,6 +31,7 @@ namespace LeRafiot
 
             [HideInInspector] public bool canCatch = true;
             [HideInInspector] public bool catchedGoodDrink;
+            [HideInInspector] public bool catchedBadDrink;
             #endregion
 
             // Start is called before the first frame update
@@ -95,9 +96,13 @@ namespace LeRafiot
                             }
                             else
                             {
+                                catchedBadDrink = true;
                                 catchedGoodDrink = false;
                                 canCatch = false;
                                 DrinkManager.Instance.canSpawn = false;
+
+                                drinkInHand = Instantiate(drinkTriggered, drinkCatch);
+                                drinkInHand.GetComponent<BoxCollider2D>().enabled = false;
                                 Destroy(drinkTriggered);
                                 //Manager.Instance.Result(false);
                                 SoundManagerChoppe.Instance.sfxSound[5].Play();
