@@ -4494,9 +4494,9 @@ MonoBehaviour:
   ropeSize2: 12
   pullingUpRopeSize2: 1
   pullingDownRopeSize2: 1
-  ropeSize3: 12
+  ropeSize3: 15
   pullingUpRopeSize3: 1
-  tickBeforeSpawn3: 3
+  tickBeforeSpawn3: 2
   tickSharkStay3: 2
   startTick3: 1
 --- !u!1 &2066185162

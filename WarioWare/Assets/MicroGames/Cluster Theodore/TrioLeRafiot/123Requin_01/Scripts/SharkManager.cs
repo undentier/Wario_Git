@@ -99,7 +99,7 @@ namespace LeRafiot
                         signStroke.gameObject.SetActive(true);
                         warningSign.gameObject.SetActive(true);
 
-                        StartCoroutine(IncreaseScale(warningSign ,startScale, finalScale, (2f * (60 / bpm))));
+                        StartCoroutine(IncreaseScale(warningSign ,startScale, finalScale, (1f * (60 / bpm))));
                     }
                 }
             }
