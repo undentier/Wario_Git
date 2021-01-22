@@ -51,6 +51,10 @@ namespace LeRafiot
                 {
                     Manager.Instance.Result(false);
                 }
+                else if (Tick == 8 && !Manager.Instance.panel.activeSelf && playerTouched)
+                {
+                    Manager.Instance.Result(false);
+                }
             }
 
             void Update()

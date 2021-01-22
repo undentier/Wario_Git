@@ -35,10 +35,10 @@ namespace LeRafiot
 
             public override void TimedUpdate()
             {
-                if (Tick == 8 && !Manager.Instance.panel.activeSelf && PlayerController.Instance.playerTouched)
+                /*if (Tick == 8 && !Manager.Instance.panel.activeSelf && PlayerController.Instance.playerTouched)
                 {
                     Manager.Instance.Result(false);
-                }
+                }*/
             }
 
             private void Update()
