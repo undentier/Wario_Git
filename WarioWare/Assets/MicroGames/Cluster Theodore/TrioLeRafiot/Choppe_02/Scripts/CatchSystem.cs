@@ -44,7 +44,6 @@ namespace LeRafiot
             public Color colorSousVerreTriggered;
 
             [Header("Button")]
-            public GameObject button;
 
 
             [HideInInspector] public bool canCatch = true;
@@ -72,7 +71,6 @@ namespace LeRafiot
                 pirateLose.SetActive(false);
 
                 sousVerre.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
-                button.SetActive(false);
             }
 
             public override void FixedUpdate()
@@ -145,7 +143,6 @@ namespace LeRafiot
                     {
 					    GetComponent<SpriteRenderer>().color = colorTriggered;
                         sousVerre.GetComponent<SpriteRenderer>().color = colorSousVerreTriggered;
-                        button.SetActive(true);
 
                         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A_Button") && !Manager.Instance.panel.activeSelf)
                         {
@@ -162,7 +159,6 @@ namespace LeRafiot
                                 drinkInHand.GetComponent<BoxCollider2D>().enabled = false;
                                 Destroy(drinkTriggered);
 
-                                button.SetActive(false);
 
                                 //Manager.Instance.Result(true);
                                 //SoundManagerChoppe.Instance.sfxSound[4].Play();
@@ -179,7 +175,6 @@ namespace LeRafiot
                                 drinkInHand.GetComponent<BoxCollider2D>().enabled = false;
                                 Destroy(drinkTriggered);
 
-                                button.SetActive(false);
 
                                 //Manager.Instance.Result(false);
                                 //SoundManagerChoppe.Instance.sfxSound[5].Play();
@@ -192,7 +187,6 @@ namespace LeRafiot
                     {
 					    GetComponent<SpriteRenderer>().color = colorBase;
                         sousVerre.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
-                        button.SetActive(false);
                     }
                 }
 			}
