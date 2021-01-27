@@ -1237,7 +1237,7 @@ MonoBehaviour:
   fondLvl2: {fileID: 1395561186}
   fondLvl3: {fileID: 1633053631}
   sousVerre: {fileID: 1230522630}
-  colorSousVerreTriggered: {r: 0.3372549, g: 1, b: 0.53333336, a: 1}
+  colorSousVerreTriggered: {r: 1, g: 0.9780377, b: 0, a: 1}
   canCatch: 1
   catchedGoodDrink: 0
   catchedBadDrink: 0
