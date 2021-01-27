@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Testing;
+﻿using UnityEngine;
+using Caps;
 
 namespace LeRafiot
 {

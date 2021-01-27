@@ -15,7 +15,7 @@ MonoBehaviour:
   cluster: 0
   trio: LeRafiot
   indexEnum: 3
-  verbe: Ascend !
+  verbe: Remonte !
   microGameScene:
     sceneAsset: {fileID: 102900000, guid: a390dcaae7f88024697b093263341d5d, type: 3}
     required: 0

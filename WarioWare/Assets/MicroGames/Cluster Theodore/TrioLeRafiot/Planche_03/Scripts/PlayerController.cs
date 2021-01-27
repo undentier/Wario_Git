@@ -1,7 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Testing;
+using Caps;
 
 namespace LeRafiot
 {
@@ -27,7 +26,7 @@ namespace LeRafiot
 
             public GameObject[] deathSprite;
 
-            /*[HideInInspector]*/ public bool playerDrowned;
+            [HideInInspector] public bool playerDrowned;
             [HideInInspector] public bool playerTouched;
 
             private bool animLock;
