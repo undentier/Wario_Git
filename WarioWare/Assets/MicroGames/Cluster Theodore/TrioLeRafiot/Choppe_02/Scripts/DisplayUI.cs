@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using Caps;
+using Testing;
 
 namespace LeRafiot
 {
